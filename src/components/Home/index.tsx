@@ -16,7 +16,7 @@ export const Home = () => {
     useEffect(() => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
-        }, 4000)
+        }, 7000)
         // return clearTimeout(timeOutId)
     }, [])
     return (

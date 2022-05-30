@@ -1,90 +1,153 @@
 @import 'src/common/sass/variables';
 
+@mixin contentDecorator {
+  font-family: 'La Belle Aurore', cursive;
+  color: $yellow;
+  font-size: 18px;
+  position: absolute;
+  opacity: 0.6;
+  //animation: fadeIn 1s 1.7s backwards;
+}
+
+@mixin beforeDecorator($tagName, $topPosition, $leftPosition) {
+  @include contentDecorator;
+  content: $tagName;
+  top: $topPosition;
+  left: $leftPosition;
+}
+
+@mixin afterDecorator($tagName, $bottomPosition, $rightPosition) {
+  @include contentDecorator;
+  content: $tagName;
+  bottom: $bottomPosition;
+  left: $rightPosition;
+}
+
 .home-page {
-  .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%;
-    max-height: 90%;
+  //background-color: rgba(225, 225, 225, 0.37);
+  min-width: 375px;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  //will-change: contents;
+  //height: 100vh;
+  flex-grow: 1;
+  min-height: 500px;
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+  padding: 20px;
+
+  &:before {
+    @include beforeDecorator('<body>', 10px, 15px);
   }
-  .dev-main-photo{
+
+  //&:after {
+  //  @include afterDecorator('</body>', 20px, 1200px);
+  //}
+
+  .text-zone {
+    //background-color: aquamarine;
+    position: relative;
+    //width: 100%;
+    min-width: 280px;
+    //max-height: 90%;
+
+    h1 {
+      color: #fff;
+      font-size: 56px;
+      line-height: 53px;
+      margin: 0;
+      font-family: 'Coolvetica', sans-serif;
+      font-weight: 400;
+      @media(max-width: 570px) {
+        font-size: 36px;
+      }
+      @media(max-width: 400px) {
+        font-size: 30px;
+      }
+
+      &:before {
+        @include beforeDecorator('<h1>', -40px, -15px);
+      }
+
+      &:after {
+        @include afterDecorator('</h1>', 90px, calc(100% - 30px));
+      }
+
+      img {
+        //margin-left: 1px;
+        opacity: 0;
+        width: 32px;
+        height: auto;
+        animation: rotateIn 1s linear both;
+        animation-delay: 1.4s;
+      }
+    }
+
+    h2 {
+      color: $lightGray;
+      margin-top: 20px;
+      font-weight: 400;
+      font-size: 11px;
+      font-family: sans-serif;
+      letter-spacing: 3px;
+      animation: fadeIn 1s 1.8s backwards;
+
+      &:before {
+        @include beforeDecorator('<p>', 160px, -20px)
+      }
+
+      &:after {
+        @include afterDecorator('</p>', 60px, 240px)
+      }
+    }
+
+    .flat-button {
+      color: $yellow;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      font-family: sans-serif;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1px solid $yellow;
+      margin-top: 25px;
+      float: left;
+      animation: fadeInAnimation 1s 1.8s backwards;
+      white-space: nowrap;
+
+      &:hover {
+        background: $yellow;
+        color: #333;
+      }
+    }
+  }
+
+  .dev-main-photo {
     width: 30%;
     min-width: 200px;
     height: auto;
-    position: absolute;
-    right: 80px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 56px;
-    line-height: 53px;
-    margin: 0;
-    font-family: 'Coolvetica';
-    font-weight: 400;
-
-    &:before {
-      content: '<h1>';
-      font-family: 'La Belle Aurore', cursive;
-      color: $yellow;
-      font-size: 18px;
-      position: absolute;
-      margin-top: -40px;
-      left: -15px;
-      opacity: 0.6;
+    @media (max-width: 980px) {
+      width: 40%;
+    }
+    @media (max-height: 800px) {
+      width: 30%;
+    }
+    @media (max-height: 710px) and (max-width: 980px) {
+      display: none;
     }
 
-    &:after {
-      content: '<h1/>';
-      font-family: 'La Belle Aurore', cursive;
-      color: $yellow;
-      font-size: 18px;
-      position: absolute;
-      margin-top: 18px;
-      margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
-      opacity: 0.6;
-    }
-
-    img {
-      margin-left: 5px;
-      opacity: 0;
-      width: 32px;
-      height: auto;
-      animation: rotateIn 1s linear both;
-      animation-delay: 1.4s;
-    }
   }
 
-  h2 {
-    color: $lightGray;
-    margin-top: 20px;
-    font-weight: 400;
-    font-size: 11px;
-    font-family: sans-serif;
-    letter-spacing: 3px;
-    animation: fadeIn 1s 1.8s backwards;
+  &:after {
+    @include afterDecorator('</body>', 30px, calc(100% - 150px));
   }
 
-  .flat-button {
-    color: $yellow;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    font-family: sans-serif;
-    text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid $yellow;
-    margin-top: 25px;
-    float: left;
-    animation: fadeInAnimation 1s 1.8s backwards;
-    white-space: nowrap;
-
-    &:hover {
-      background: $yellow;
-      color: #333;
-    }
-  }
 }

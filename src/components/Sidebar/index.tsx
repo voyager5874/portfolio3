@@ -12,15 +12,14 @@ import {Link, NavLink} from 'react-router-dom'
 
 export const Sidebar = () => {
     return (
-        <div className="nav-bar">
+        <div className="sidebar">
             <Link className="logo" to="/">
                 <FontAwesomeIcon icon={faReact} size={"3x"}/>
-                {/*<img src={LogoS} alt="Logo"/>*/}
-                <div className="sub-logo">Savaa</div>
+                <div className="logo-text">Savaa</div>
                 {/*<div className="sub-logo">Savkin</div>*/}
             </Link>
             <nav>
-                <NavLink className={({isActive}) => (isActive ? "active" : "")} to="/">
+                <NavLink className={({isActive}) => (isActive ? "active" : "")} to="/home">
                     <FontAwesomeIcon icon={faHome} color="#4d4d4e"/>
                 </NavLink>
                 <NavLink className={({isActive}) => (isActive ? "about-link active" : "about-link")} to="/about">
@@ -36,7 +35,7 @@ export const Sidebar = () => {
             <ul>
                 <li>
                     <a
-                        href="https://www.linkedin.com"
+                        href="https://www.linkedin.com/in/aleksandr-savkin-8802b7129/"
                         target="_blank"
                         rel="noreferrer"
                     >

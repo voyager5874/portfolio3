@@ -1,0 +1,24 @@
+@import 'flexConfig';
+
+@mixin pageContainerConfig {
+  //will-change: contents;
+  width: 100%;
+  height: 90%;
+  min-width: 300px;
+  min-height: 500px;
+  opacity: 0;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+  @include flexBaseConfig;
+  //display: flex;
+  //gap: 40px;
+  //justify-content: space-around;
+  //align-items: center;
+  //align-content: center;
+  //flex-wrap: wrap;
+  flex-grow: 1;
+  position: relative;
+  padding: 20px;
+}

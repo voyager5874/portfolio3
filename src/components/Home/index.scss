@@ -1,4 +1,4 @@
-@import 'src/common/sass/variables';
+@import '../../common/sass/variables';
 
 @mixin contentDecorator {
   font-family: 'La Belle Aurore', cursive;
@@ -72,6 +72,10 @@
       @media(max-width: 400px) {
         font-size: 30px;
       }
+      @media (max-height: 400px) {
+        font-size: 30px;
+        line-height: 30px;
+      }
 
       &:before {
         @include beforeDecorator('<h1>', -40px, -15px);
@@ -108,26 +112,7 @@
         @include afterDecorator('</p>', 60px, 240px)
       }
     }
-
-    .flat-button {
-      color: $yellow;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      font-family: sans-serif;
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1px solid $yellow;
-      margin-top: 25px;
-      float: left;
-      animation: fadeInAnimation 1s 1.8s backwards;
-      white-space: nowrap;
-
-      &:hover {
-        background: $yellow;
-        color: #333;
-      }
-    }
+    @import "src/common/sass/flat-button";
   }
 
   .dev-main-photo {

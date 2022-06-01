@@ -4,6 +4,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import {Home} from "./components/Home";
 import {About} from "./components/About";
 import {Sidebar} from "./components/Sidebar";
+import {ContactForm} from "./components/ContactForm";
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
             <Routes>
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
-                {/*<Route path="/contact" element={<Contact />} />*/}
+                <Route path="/contact" element={<ContactForm />} />
                 <Route path="/" element={<Navigate to="/home" />} />
 
             </Routes>

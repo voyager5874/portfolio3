@@ -1,51 +1,13 @@
 @import '../../common/sass/variables';
-
-@mixin contentDecorator {
-  font-family: 'La Belle Aurore', cursive;
-  color: $yellow;
-  font-size: 18px;
-  position: absolute;
-  opacity: 0.6;
-  //animation: fadeIn 1s 1.7s backwards;
-}
-
-@mixin beforeDecorator($tagName, $topPosition, $leftPosition) {
-  @include contentDecorator;
-  content: $tagName;
-  top: $topPosition;
-  left: $leftPosition;
-}
-
-@mixin afterDecorator($tagName, $bottomPosition, $rightPosition) {
-  @include contentDecorator;
-  content: $tagName;
-  bottom: $bottomPosition;
-  left: $rightPosition;
-}
+@import 'src/common/sass/mixins/pageContainerConfig';
+@import 'src/common/sass/mixins/htmlTagsDecorators';
 
 .home-page {
   //background-color: rgba(225, 225, 225, 0.37);
-  min-width: 375px;
-  display: flex;
-  gap: 50px;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  //will-change: contents;
-  //height: 100vh;
-  flex-grow: 1;
-  min-height: 500px;
-  position: relative;
-  opacity: 0;
-  z-index: 1;
-  transform-style: preserve-3d;
-  animation: fadeIn 1s forwards;
-  animation-delay: 1s;
-  padding: 20px;
+  @include pageContainerConfig;
 
   &:before {
-    @include beforeDecorator('<body>', 10px, 15px);
+    @include beforeDecorator('<body>', 30px, 35px);
   }
 
   //&:after {
@@ -53,14 +15,18 @@
   //}
 
   .text-zone {
-    //background-color: aquamarine;
-    position: relative;
-    //width: 100%;
-    min-width: 280px;
-    //max-height: 90%;
+    //background-color: blueviolet;
+    min-width: 300px;
+    max-width: 700px;
+    @media (max-width: 980px) {
+      margin-left: 50px;
+      margin-top: 50px;
+      width: 95vw;
+    }
 
     h1 {
-      color: #fff;
+      position: relative;
+      color: $grayish;
       font-size: 56px;
       line-height: 53px;
       margin: 0;
@@ -82,7 +48,7 @@
       }
 
       &:after {
-        @include afterDecorator('</h1>', 90px, calc(100% - 30px));
+        @include afterDecorator('</h1>', -20px, fit-content);
       }
 
       img {
@@ -96,6 +62,7 @@
     }
 
     h2 {
+      position: relative;
       color: $lightGray;
       margin-top: 20px;
       font-weight: 400;
@@ -105,13 +72,14 @@
       animation: fadeIn 1s 1.8s backwards;
 
       &:before {
-        @include beforeDecorator('<p>', 160px, -20px)
+        @include beforeDecorator('<p>', -15px, -30px)
       }
 
       &:after {
-        @include afterDecorator('</p>', 60px, 240px)
+        @include afterDecorator('</p>', -15px, fit-content)
       }
     }
+
     @import "src/common/sass/flat-button";
   }
 

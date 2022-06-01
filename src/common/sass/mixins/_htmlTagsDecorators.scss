@@ -1,0 +1,25 @@
+@import '../../sass/variables';
+
+@mixin contentDecorator {
+  font-family: 'La Belle Aurore', cursive;
+  color: $yellow;
+  font-size: 18px;
+  position: absolute;
+  opacity: 0.6;
+}
+
+@mixin beforeDecorator($tagName, $topPosition, $leftPosition) {
+  @include contentDecorator;
+  content: $tagName;
+  top: $topPosition;
+  left: $leftPosition;
+}
+
+@mixin afterDecorator($tagName, $bottomPosition, $rightPosition) {
+  @include contentDecorator;
+  content: $tagName;
+  bottom: $bottomPosition;
+  left: $rightPosition;
+  //left: #{$rightPosition } + 20px;
+  //right: $rightPosition;
+}

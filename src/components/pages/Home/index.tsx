@@ -1,6 +1,6 @@
 import './index.scss';
 import {Link} from "react-router-dom";
-import ava from '../../../assets/images/ava-temp3.jpeg'
+import ava from '../../../assets/images/ava-real1.jpg'
 import {PageCaption} from "../../pageCaption";
 
 export const Home = () => {

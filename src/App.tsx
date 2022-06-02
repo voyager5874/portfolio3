@@ -2,7 +2,7 @@ import './App.scss';
 import {Navigate, Route, Routes} from "react-router-dom";
 // import {Layout} from "./components/Layout";
 import {Home} from "./components/pages/Home";
-import {About} from "./components/About";
+import {About} from "./components/pages/About";
 import {Sidebar} from "./components/Sidebar";
 import {ContactForm} from "./components/pages/ContactMe";
 

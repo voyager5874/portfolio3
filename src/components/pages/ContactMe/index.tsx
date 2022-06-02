@@ -18,24 +18,24 @@ export const ContactForm = () => {
             if (!form.current || !process.env.REACT_APP_EMAILJS_SERVICE_ID
                 || !process.env.REACT_APP_EMAILJS_PUBLIC_KEY
                 || !process.env.REACT_APP_EMAILJS_TEMPLATE_ID) {
-                toast.error('emailjs service is not registered')
+                toast.error('emailjs tokens not found')
                 return
             }
-            emailjs
-                .sendForm(
-                    process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                    process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                    form.current,
-                    process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-                )
-                .then(
-                    () => {
-                        toast.success('Message sent!')
-                    }
-                ).catch(error => {
-                    console.dir(error)
-                toast.error('Failed to send the message, please try again')
-            })
+
+            toast.promise(
+                emailjs
+                    .sendForm(
+                        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                        form.current,
+                        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+                    ),
+                {
+                    pending: 'Your message is being sent',
+                    success: 'Successfully sent',
+                    error: "Sorry, couldn't sent the message"
+                }
+            )
         }
 
         return (

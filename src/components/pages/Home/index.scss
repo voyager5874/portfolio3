@@ -51,6 +51,7 @@
 
   .dev-main-photo {
     width: 20%;
+    max-width: 350px;
     min-width: 200px;
     height: auto;
     @media (max-width: 980px) {

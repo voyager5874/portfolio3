@@ -1,6 +1,6 @@
 @import '../../sass/variables';
 
-@mixin contentDecorator {
+@mixin contentDecoratorConfig {
   font-family: 'La Belle Aurore', cursive;
   color: $yellow;
   font-size: 18px;
@@ -9,14 +9,14 @@
 }
 
 @mixin beforeDecorator($tagName, $topPosition, $leftPosition) {
-  @include contentDecorator;
+  @include contentDecoratorConfig;
   content: $tagName;
   top: $topPosition;
   left: $leftPosition;
 }
 
 @mixin afterDecorator($tagName, $bottomPosition, $rightPosition) {
-  @include contentDecorator;
+  @include contentDecoratorConfig;
   content: $tagName;
   bottom: $bottomPosition;
   left: $rightPosition;

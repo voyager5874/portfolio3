@@ -1,0 +1,60 @@
+@import '../../common/sass/variables';
+@import 'src/common/sass/mixins/htmlTagsDecorators';
+
+.text-appearance-animation {
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  min-width: 10px;
+}
+
+.text-on-hover-animation {
+  min-width: 10px;
+  display: inline-block;
+  animation-fill-mode: both;
+  animation: rubberBand 1s;
+
+
+  &:hover {
+    animation: none;
+    color: $yellow;
+  }
+}
+
+@for $i from 1 through 99 {
+  .text-appearance-animation._#{$i} {
+    animation-delay: #{$i / 10}s;
+  }
+}
+
+.page-caption {
+  //max-width: 400px;
+  position: relative;
+  color: $grayish;
+  font-size: 56px;
+  line-height: 53px;
+  margin: 0;
+  font-family: 'Coolvetica', sans-serif;
+  font-weight: 400;
+  @media(max-width: 570px) {
+    font-size: 36px;
+  }
+  @media(max-width: 400px) {
+    font-size: 30px;
+  }
+  @media (max-height: 400px) {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  &:before {
+    @include beforeDecorator('<h1>', -30px, -15px);
+  }
+
+  &:after {
+    @include afterDecorator('</h1>', -20px, fit-content);
+  }
+}

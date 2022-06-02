@@ -1,6 +1,6 @@
-@import '../../common/sass/variables';
-@import 'src/common/sass/mixins/pageContainerConfig';
-@import 'src/common/sass/mixins/htmlTagsDecorators';
+@import '../../../common/sass/variables';
+@import '../../../common/sass/mixins/pageContainerConfig';
+@import '../../../common/sass/mixins/htmlTagsDecorators';
 
 .home-page {
   //background-color: rgba(225, 225, 225, 0.37);
@@ -8,6 +8,9 @@
 
   &:before {
     @include beforeDecorator('<body>', 30px, 35px);
+    @media (max-height: 350px) {
+      display: none;
+    }
   }
 
   //&:after {
@@ -16,49 +19,12 @@
 
   .text-zone {
     //background-color: blueviolet;
-    min-width: 300px;
+    min-width: fit-content;
     max-width: 700px;
     @media (max-width: 980px) {
-      margin-left: 50px;
+      margin-left: 30px;
       margin-top: 50px;
       width: 95vw;
-    }
-
-    h1 {
-      position: relative;
-      color: $grayish;
-      font-size: 56px;
-      line-height: 53px;
-      margin: 0;
-      font-family: 'Coolvetica', sans-serif;
-      font-weight: 400;
-      @media(max-width: 570px) {
-        font-size: 36px;
-      }
-      @media(max-width: 400px) {
-        font-size: 30px;
-      }
-      @media (max-height: 400px) {
-        font-size: 30px;
-        line-height: 30px;
-      }
-
-      &:before {
-        @include beforeDecorator('<h1>', -40px, -15px);
-      }
-
-      &:after {
-        @include afterDecorator('</h1>', -20px, fit-content);
-      }
-
-      img {
-        //margin-left: 1px;
-        opacity: 0;
-        width: 32px;
-        height: auto;
-        animation: rotateIn 1s linear both;
-        animation-delay: 1.4s;
-      }
     }
 
     h2 {
@@ -80,7 +46,7 @@
       }
     }
 
-    @import "src/common/sass/flat-button";
+    @import "../../../common/sass/flat-button";
   }
 
   .dev-main-photo {

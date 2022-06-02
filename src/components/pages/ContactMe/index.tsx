@@ -1,85 +1,56 @@
 import './index.scss';
-import {AnimatedLetters} from "../AnimatedLetters";
-import {useEffect, useRef, useState} from "react";
+import {useRef} from "react";
 import {toast, ToastContainer} from "react-toastify";
-import emailjs from '@emailjs/browser'
-import Loader from 'react-loaders'
+import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
+import Loader from 'react-loaders';
 import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
 import {LatLngTuple} from "leaflet";
+import {PageCaption} from "../../pageCaption";
 
-const pageCaption = "Contact me".split("")
-
-const coordinates = [53.18800463287455, 45.060760577532896] as LatLngTuple
+const coordinates = [53.13018331050917, 45.030724178479495] as LatLngTuple
 
 export const ContactForm = () => {
-        const [letterClass, setLetterClass] = useState('text-animate')
         const form = useRef<HTMLFormElement>(null)
-        useEffect(() => {
-            setTimeout(() => {
-                // timeOutId =
-                setLetterClass('text-animate-hover')
-            }, 3000)
-            // return clearTimeout(timeOutId)
-        }, [])
 
         const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault()
-            if (!form.current) return
+            if (!form.current || !process.env.REACT_APP_EMAILJS_SERVICE_ID
+                || !process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+                || !process.env.REACT_APP_EMAILJS_TEMPLATE_ID) {
+                toast.error('emailjs service is not registered')
+                return
+            }
             emailjs
                 .sendForm(
-                    process.env.REACT_APP_EMIAL_SERVICE_ID || '',
-                    process.env.REACT_APP_TEMPLATE_ID || '',
+                    process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                    process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
                     form.current,
-                    process.env.REACT_APP_PUBLIC_KEY
+                    process.env.REACT_APP_EMAILJS_PUBLIC_KEY
                 )
                 .then(
                     () => {
-                        toast.success('Message successfully sent!', {
-                            position: 'bottom-center',
-                            autoClose: 3500,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: 'dark',
-                        })
+                        toast.success('Message sent!')
                     }
                 ).catch(error => {
-                toast.error('Failed to send the message, please try again', {
-                    position: 'bottom-center',
-                    autoClose: 3500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'dark',
-                })
+                    console.dir(error)
+                toast.error('Failed to send the message, please try again')
             })
-
         }
 
         return (
             <>
                 <div className="contact-page">
                     <div className="text-zone">
-                        <h1>
-                            <AnimatedLetters
-                                letterClass={letterClass}
-                                strArray={pageCaption}
-                                delay={15}
-                            />
-                        </h1>
+                        <PageCaption delay={18} duration={3100} text="Contact me"/>
                         <p>
                             If you have question, don't
                             hesitate to contact me using the form or any other media shared.
                         </p>
                         <div className="contact-form">
                             <form ref={form} onSubmit={sendEmail}>
-
                                 <label className="half">
-                                    <input placeholder="Name" type="text" name="name" required/>
+                                    <input placeholder="Name" type="text" name="from_name" required/>
                                 </label>
                                 <label className="half">
                                     <input
@@ -105,7 +76,7 @@ export const ContactForm = () => {
                                         />
                                 </label>
                                 <button type="submit" className="flat-button">Send</button>
-                                <ToastContainer/>
+
                             </form>
                         </div>
                     </div>
@@ -113,12 +84,9 @@ export const ContactForm = () => {
                         <div className="info-map">
                             Aleksandr Savkin
                             <br/>
-                            Penza, <br/>
-                            Penza, <br/>
-                            Russia
-                            <br/>
+                            Penza city, Russia
                         </div>
-                        <MapContainer center={coordinates} zoom={13}>
+                        <MapContainer center={coordinates} zoom={15}>
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
@@ -129,6 +97,18 @@ export const ContactForm = () => {
                     </div>
                 </div>
                 <Loader type="pacman" active/>
+                <ToastContainer
+                    position="bottom-left"
+                    autoClose={3000}
+                    hideProgressBar
+                    newestOnTop
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable={false}
+                    pauseOnHover={false}
+                    theme={"dark"}
+                />
             </>
         );
     }

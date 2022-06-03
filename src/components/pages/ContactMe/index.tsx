@@ -10,7 +10,7 @@ import {PageCaption} from "../../pageCaption";
 
 const coordinates = [53.13018331050917, 45.030724178479495] as LatLngTuple
 
-export const ContactForm = () => {
+export const ContactMe = () => {
         const form = useRef<HTMLFormElement>(null)
 
         const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
@@ -44,7 +44,7 @@ export const ContactForm = () => {
                     <div className="text-zone">
                         <PageCaption delay={18} duration={3100} text="Contact me"/>
                         <p>
-                            If you have question, don't
+                            If you have a question, don't
                             hesitate to contact me using the form or any other media shared.
                         </p>
                         <div className="contact-form">

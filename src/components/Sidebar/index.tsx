@@ -7,7 +7,7 @@ import {
     faTelegram,
     faReact,
 } from '@fortawesome/free-brands-svg-icons'
-import {faHome, faUser, faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import {faHome, faUser, faEnvelope, faTools} from '@fortawesome/free-solid-svg-icons'
 import {Link, NavLink} from 'react-router-dom'
 
 export const Sidebar = () => {
@@ -24,6 +24,12 @@ export const Sidebar = () => {
                 </NavLink>
                 <NavLink className={({isActive}) => (isActive ? "about-link active" : "about-link")} to="/about">
                     <FontAwesomeIcon icon={faUser} color="#4d4d4e"/>
+                </NavLink>
+                <NavLink
+                    className={({isActive}) => (isActive ? "skills-link active" : "skills-link")}
+                    to="/skills"
+                >
+                    <FontAwesomeIcon icon={faTools} color="#4d4d4e"/>
                 </NavLink>
                 <NavLink
                     className={({isActive}) => (isActive ? "contact-link active" : "contact-link")}

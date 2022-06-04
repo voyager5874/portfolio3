@@ -19,27 +19,32 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 10px;
+  padding: 20px;
   background: #181818;
   width: 80%;
-  max-width: 300px;
   height: 60%;
+  max-width: 300px;
+  max-height: 400px;
   z-index: 11;
   display: flex;
   justify-items: flex-start;
 
 
   nav {
-    background-color: rgba(169, 144, 180, 0.14);
+    //background-color: rgba(169, 144, 180, 0.14);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 10px;
     position: relative;
     min-width: 200px;
 
     a {
       box-sizing: border-box;
-      width: 150px;
+      //border: 1px solid gold;
+      width: 50px;
+      text-align: center;
       font-size: 22px;
       color: $darkGray;
       display: block;
@@ -61,11 +66,11 @@
         font-size: 9px;
         letter-spacing: 2px;
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: -20px;
+        transform: translateX(-50%, -25px);
         display: block;
         width: 100%;
-        text-align: center;
+        //text-align: center;
         transition: all 0.3s ease-out;
         -webkit-transition: all 0.3s ease-out;
       }

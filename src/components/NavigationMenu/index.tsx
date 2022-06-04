@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faHome, faTools, faUser} from "@fortawesome/free-solid-svg-icons";
 import {faHamburger} from "@fortawesome/free-solid-svg-icons/faHamburger";
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
+import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
 
 
 export const NavigationMenu = () => {
@@ -14,12 +15,14 @@ export const NavigationMenu = () => {
         <>
             {menuOpen ?
                 <div className={"popup-nav-menu"}>
-                    <button onClick={()=>setMenuOpen(false)} className={"flat-button popup-close"}><b>X</b></button>
+                    <button onClick={() => setMenuOpen(false)} className={"flat-button popup-close"}><FontAwesomeIcon
+                        icon={faXmark}/></button>
                     <nav>
                         <NavLink className={({isActive}) => (isActive ? "active" : "")} to="/home">
                             <FontAwesomeIcon icon={faHome} color="#4d4d4e"/>
                         </NavLink>
-                        <NavLink className={({isActive}) => (isActive ? "about-link active" : "about-link")} to="/about">
+                        <NavLink className={({isActive}) => (isActive ? "about-link active" : "about-link")}
+                                 to="/about">
                             <FontAwesomeIcon icon={faUser} color="#4d4d4e"/>
                         </NavLink>
                         <NavLink
@@ -37,7 +40,8 @@ export const NavigationMenu = () => {
                     </nav>
                 </div>
                 :
-                <button onClick={() => setMenuOpen(true)} className="flat-button popup-open"><FontAwesomeIcon icon={faBars}/></button>
+                <button onClick={() => setMenuOpen(true)} className="flat-button popup-open"><FontAwesomeIcon
+                    icon={faBars}/></button>
             }
         </>
 

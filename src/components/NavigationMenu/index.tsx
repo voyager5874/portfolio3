@@ -7,6 +7,7 @@ import {faEnvelope, faHome, faTools, faUser} from "@fortawesome/free-solid-svg-i
 import {faHamburger} from "@fortawesome/free-solid-svg-icons/faHamburger";
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
 import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
+import {faGithub, faLinkedin, faTelegram} from "@fortawesome/free-brands-svg-icons";
 
 
 export const NavigationMenu = () => {
@@ -38,6 +39,36 @@ export const NavigationMenu = () => {
                             <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e"/>
                         </NavLink>
                     </nav>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.linkedin.com/in/aleksandr-savkin-8802b7129/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/voyager5874"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <FontAwesomeIcon icon={faGithub} color="#4d4d4e"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://t.me/xander58"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <FontAwesomeIcon icon={faTelegram} color="#4d4d4e"/>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
                 :
                 <button onClick={() => setMenuOpen(true)} className="flat-button popup-open"><FontAwesomeIcon

@@ -6,6 +6,7 @@ import {About} from "./components/pages/About";
 import {Sidebar} from "./components/Sidebar";
 import {ContactMe} from "./components/pages/ContactMe";
 import {Skills} from "./components/pages/Skills";
+import {NavigationMenu} from "./components/NavigationMenu";
 
 function App() {
     return (
@@ -17,8 +18,8 @@ function App() {
                 <Route path="/skills" element={<Skills/>}/>
                 <Route path="/contact" element={<ContactMe />} />
                 <Route path="/" element={<Navigate to="/home" />} />
-
             </Routes>
+            <NavigationMenu/>
         </div>
 
     )

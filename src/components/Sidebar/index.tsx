@@ -15,7 +15,7 @@ export const Sidebar = () => {
         <div className="sidebar">
             <Link className="logo" to="/">
                 <FontAwesomeIcon icon={faReact} size={"3x"}/>
-                <div className="logo-text">Savaa</div>
+                {/*<div className="logo-text">Savaa</div>*/}
                 {/*<div className="sub-logo">Savkin</div>*/}
             </Link>
             <nav>
@@ -50,7 +50,7 @@ export const Sidebar = () => {
                 </li>
                 <li>
                     <a
-                        href="https://github.com"
+                        href="https://github.com/voyager5874"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -59,7 +59,7 @@ export const Sidebar = () => {
                 </li>
                 <li>
                     <a
-                        href="https://github.com"
+                        href="https://t.me/xander58"
                         target="_blank"
                         rel="noreferrer"
                     >

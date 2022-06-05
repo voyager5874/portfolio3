@@ -19,23 +19,23 @@ export const Sidebar = () => {
                 {/*<div className="sub-logo">Savkin</div>*/}
             </Link>
             <nav>
-                <NavLink className={({isActive}) => (isActive ? "active" : "")} to="/home">
-                    <FontAwesomeIcon icon={faHome} color="#4d4d4e"/>
+                <NavLink to="/home">
+                    <FontAwesomeIcon icon={faHome}/>
                 </NavLink>
-                <NavLink className={({isActive}) => (isActive ? "about-link active" : "about-link")} to="/about">
-                    <FontAwesomeIcon icon={faUser} color="#4d4d4e"/>
+                <NavLink className={"about-link"} to="/about">
+                    <FontAwesomeIcon icon={faUser}/>
                 </NavLink>
                 <NavLink
-                    className={({isActive}) => (isActive ? "skills-link active" : "skills-link")}
+                    className={"skills-link"}
                     to="/skills"
                 >
-                    <FontAwesomeIcon icon={faTools} color="#4d4d4e"/>
+                    <FontAwesomeIcon icon={faTools}/>
                 </NavLink>
                 <NavLink
-                    className={({isActive}) => (isActive ? "contact-link active" : "contact-link")}
+                    className={"contact-link"}
                     to="/contact"
                 >
-                    <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e"/>
+                    <FontAwesomeIcon icon={faEnvelope}/>
                 </NavLink>
             </nav>
             <ul>
@@ -45,7 +45,7 @@ export const Sidebar = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e"/>
+                        <FontAwesomeIcon icon={faLinkedin}/>
                     </a>
                 </li>
                 <li>
@@ -54,7 +54,7 @@ export const Sidebar = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <FontAwesomeIcon icon={faGithub} color="#4d4d4e"/>
+                        <FontAwesomeIcon icon={faGithub}/>
                     </a>
                 </li>
                 <li>
@@ -63,7 +63,7 @@ export const Sidebar = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <FontAwesomeIcon icon={faTelegram} color="#4d4d4e"/>
+                        <FontAwesomeIcon icon={faTelegram}/>
                     </a>
                 </li>
 

@@ -1,39 +1,35 @@
-@import '../../common/sass/color-variables';
+@import 'src/common/sass/color-variables';
 @import 'src/common/sass/mixins/htmlTagsDecorators';
 
 .text-appearance-animation {
   display: inline-block;
   opacity: 0;
-  animation: bounceIn;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
+  animation: bounceIn 1s forwards;
   min-width: 10px;
 }
 
 .text-on-hover-animation {
   min-width: 10px;
   display: inline-block;
-  animation-fill-mode: both;
-  animation: rubberBand 1s;
+  animation: rubberBand 1s both;
 
 
   &:hover {
     animation: none;
-    color: $yellow;
+    color: $hoveredElementColor;
   }
 }
 
-@for $i from 1 through 99 {
-  .text-appearance-animation._#{$i} {
-    animation-delay: #{$i / 10}s;
-  }
-}
+//@for $i from 1 through 99 {
+//  .text-appearance-animation._#{$i} {
+//    animation-delay: #{$i / 10}s;
+//  }
+//}
 
 .page-caption {
   //max-width: 400px;
   position: relative;
-  color: $grayish;
+  color: $casualTextColor;
   font-size: 56px;
   line-height: 53px;
   margin: 0;

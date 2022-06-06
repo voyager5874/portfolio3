@@ -5,6 +5,7 @@ import TagCloud from "TagCloud"
 // const TagCloud = require('TagCloud');
 import Loader from 'react-loaders';
 import {PageCaption} from "../../pageCaption";
+import LoremIpsum from "react-lorem-ipsum";
 
 
 type TagCloudOptionsType = Partial<{
@@ -26,18 +27,31 @@ const myTags = [
     'git', 'Formik', 'TDD', 'Storybook', 'Styled Components', 'Redux-thunk', 'Redux toolkit', 'React-router',
 ];
 
+const CLOUD_MIN_RADIUS = 200
+const CLOUD_MAX_RADIUS = 400
+
 export const Skills = () => {
     const cloudContainer = useRef<HTMLDivElement>(null)
-    const [cloudRadius, setCloudRadius] = useState(150)
+    const [cloudRadius, setCloudRadius] = useState(CLOUD_MIN_RADIUS)
 
-    const options: TagCloudOptionsType = {
-        radius: cloudRadius,
-        maxSpeed: 'fast',
-        initSpeed: 'fast',
+    // const options: TagCloudOptionsType = {
+    //     radius: cloudRadius > 190 ? cloudRadius : 190,
+    //     maxSpeed: 'fast',
+    //     initSpeed: 'fast',
+    // }
+    const handleRadiusUpdate = (radius: number) => {
+        if (radius > CLOUD_MIN_RADIUS && radius < CLOUD_MAX_RADIUS ) {
+            setCloudRadius(Math.floor(radius))
+        }
+        return
     }
 
     useEffect(() => {
-        const tagInstance = TagCloud(TagCloudContainerClassName, myTags, options)
+        const tagInstance = TagCloud(TagCloudContainerClassName, myTags, {
+            radius: cloudRadius,
+            maxSpeed: 'fast',
+            initSpeed: 'fast',
+        } as TagCloudOptionsType)
         // console.log(tagInstance)
         return () => {
             tagInstance.destroy()
@@ -45,11 +59,21 @@ export const Skills = () => {
     }, [cloudRadius])
 
     useEffect(() => {
-        if (cloudContainer.current) setCloudRadius(cloudContainer.current.clientWidth / 2)
+        if (cloudContainer.current && cloudContainer.current.clientWidth < window.innerHeight) {
+            handleRadiusUpdate(cloudContainer.current.clientWidth / 2)
+        } else {
+            handleRadiusUpdate(window.innerHeight / 2)
+        }
 
         function handleResize() {
             if (!cloudContainer.current) return
-            setCloudRadius((cloudContainer.current.clientWidth) / 2)
+            cloudContainer.current.clientWidth < window.innerHeight ?
+                (handleRadiusUpdate((cloudContainer.current.clientWidth) / 2))
+                : (handleRadiusUpdate((window.innerHeight) / 2))
+            // setCloudRadius((cloudContainer.current.clientHeight) / 2)
+            // console.log('width', cloudContainer.current.clientWidth)
+            // console.log('height', cloudContainer.current.clientHeight)
+            // console.log('window', window.innerHeight)
         }
 
         window.addEventListener('resize', handleResize)
@@ -62,7 +86,11 @@ export const Skills = () => {
     return (
         <>
             <div className="skills-page">
-                <PageCaption delay={20} duration={3500} text={"Tools I'm using"}/>
+                <div className={"text-zone"}>
+                    <PageCaption delay={20} duration={3500} text={"Tools I'm using"}/>
+                    <LoremIpsum p={2} random={false}/>
+                </div>
+
                 <div ref={cloudContainer} className="tagcloud"/>
             </div>
 

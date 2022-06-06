@@ -13,7 +13,7 @@ export const Home = () => {
                     CONTACT ME
                 </Link>
             </div>
-            <img src={ava} alt="developer photo" className="dev-main-photo"/>
+            <img src={ava} alt="developer" className="dev-main-photo"/>
             {/*<Photo/>*/}
 
         </div>

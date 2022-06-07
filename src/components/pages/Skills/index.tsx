@@ -34,11 +34,6 @@ export const Skills = () => {
     const cloudContainer = useRef<HTMLDivElement>(null)
     const [cloudRadius, setCloudRadius] = useState(CLOUD_MIN_RADIUS)
 
-    // const options: TagCloudOptionsType = {
-    //     radius: cloudRadius > 190 ? cloudRadius : 190,
-    //     maxSpeed: 'fast',
-    //     initSpeed: 'fast',
-    // }
     const handleRadiusUpdate = (radius: number) => {
         if (radius > CLOUD_MIN_RADIUS && radius < CLOUD_MAX_RADIUS ) {
             setCloudRadius(Math.floor(radius))
@@ -59,7 +54,8 @@ export const Skills = () => {
     }, [cloudRadius])
 
     useEffect(() => {
-        if (cloudContainer.current && cloudContainer.current.clientWidth < window.innerHeight) {
+        if(!cloudContainer.current) return
+        if (cloudContainer.current.clientWidth < window.innerHeight) {
             handleRadiusUpdate(cloudContainer.current.clientWidth / 2)
         } else {
             handleRadiusUpdate(window.innerHeight / 2)
@@ -67,9 +63,11 @@ export const Skills = () => {
 
         function handleResize() {
             if (!cloudContainer.current) return
-            cloudContainer.current.clientWidth < window.innerHeight ?
-                (handleRadiusUpdate((cloudContainer.current.clientWidth) / 2))
-                : (handleRadiusUpdate((window.innerHeight) / 2))
+            if (cloudContainer.current.clientWidth < window.innerHeight) {
+                handleRadiusUpdate(cloudContainer.current.clientWidth / 2)
+            } else {
+                handleRadiusUpdate(window.innerHeight / 2)
+            }
             // setCloudRadius((cloudContainer.current.clientHeight) / 2)
             // console.log('width', cloudContainer.current.clientWidth)
             // console.log('height', cloudContainer.current.clientHeight)

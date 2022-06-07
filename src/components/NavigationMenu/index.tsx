@@ -18,7 +18,11 @@ export const NavigationMenu = () => {
 
     return (
         <>
-            <CSSTransition in={menuOpen} timeout={2200} mountOnEnter unmountOnExit classNames={"popup-nav-menu"}>
+            <CSSTransition in={menuOpen}
+                           timeout={1200}
+                           mountOnEnter
+                           unmountOnExit
+                           classNames={"popup-nav-menu"}>
                 <div className={"popup-nav-menu"}>
                     <button onClick={handleMenuOpen} className="flat-button popup-close">
                         <FontAwesomeIcon icon={faXmark}/>

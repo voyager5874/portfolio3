@@ -158,9 +158,9 @@ $hoveredElementHighlight: $hoveredElementColor;
 }
 
 .popup-nav-menu-enter-active{
-  animation: flipInY 1s forwards;
+  animation: flipInY 1.1s forwards;
 }
 
 .popup-nav-menu-exit-active, .popup-nav-menu-appear-active{
-  animation: flipOutY 1s forwards;
+  animation: flipOutY 1.1s forwards;
 }

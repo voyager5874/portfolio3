@@ -39,7 +39,9 @@
 
     .links-container {
       .project-link {
-        animation: fadeIn 1.5s forwards;
+        //pointer-events: auto;
+        //animation: disable-pointer-events 500ms;
+        animation: fadeIn 1.5s forwards, disable-pointer-events 600ms;
       }
     }
   }
@@ -75,6 +77,8 @@
       a {
         @extend .flat-button;
         opacity: 0;
+        transition: all 1.5s;
+        //pointer-events: none; //for touchscreens
       }
     }
 
@@ -126,4 +130,10 @@
   gap: 40px;
   margin-top: 40px;
   //background-color: brown;
+}
+
+@keyframes disable-pointer-events {
+  0%, 99% {
+    pointer-events: none;
+  }
 }

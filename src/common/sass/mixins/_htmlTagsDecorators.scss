@@ -2,10 +2,11 @@
 
 @mixin contentDecoratorConfig {
   font-family: 'La Belle Aurore', cursive;
-  color: $yellow;
+  color: $hoveredElementColor;
   font-size: 18px;
   position: absolute;
-  opacity: 0.6;
+  //opacity: 0.6;
+  //animation: jello 3s;
 }
 
 @mixin beforeDecorator($tagName, $topPosition, $leftPosition) {

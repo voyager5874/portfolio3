@@ -7,6 +7,7 @@ import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
 import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
 import {faGithub, faLinkedin, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {CSSTransition} from 'react-transition-group';
+import {faBriefcase} from "@fortawesome/free-solid-svg-icons/faBriefcase";
 
 export const NavigationMenu = () => {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -24,18 +25,18 @@ export const NavigationMenu = () => {
                            unmountOnExit
                            classNames={"popup-nav-menu"}>
                 <div className={"popup-nav-menu"}>
-                    <button onClick={handleMenuOpen} className="flat-button popup-close">
+                    <button onClick={handleMenuOpen} className="popup-close">
                         <FontAwesomeIcon icon={faXmark}/>
                     </button>
                     <nav>
-                        <NavLink to="/home" onClick={handleMenuOpen}>
+                        <NavLink to="/home"
+                                 onClick={handleMenuOpen}>
                             <FontAwesomeIcon icon={faHome}/>
                         </NavLink>
-                        <NavLink className={"about-link"}
-                                 to="/about"
-                                 onClick={handleMenuOpen}
-                        >
-                            <FontAwesomeIcon icon={faUser}/>
+                        <NavLink
+                            className={"portfolio-link"}
+                            to="/portfolio">
+                            <FontAwesomeIcon icon={faBriefcase}/>
                         </NavLink>
                         <NavLink
                             className={"skills-link"}

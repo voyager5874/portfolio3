@@ -8,11 +8,13 @@ $iconsColor: $secondaryIconsColor;
   //color: $iconsColor;
   //background-color: rgba(24, 24, 24, 0.46);
   width: $startSidebarWidth;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  //top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 3;
   //min-height: 500px;
   @media (max-width: 980px){
@@ -87,6 +89,7 @@ $iconsColor: $secondaryIconsColor;
 
       &:after {
         content: '';
+        text-transform: uppercase;
         font-size: 9px;
         letter-spacing: 2px;
         position: absolute;
@@ -102,26 +105,32 @@ $iconsColor: $secondaryIconsColor;
       &:first-child {
         //margin-top: 20px;
         &:after {
-          content: 'HOME';
+          content: 'home';
         }
       }
     }
 
     a.about-link {
       &:after {
-        content: 'ABOUT';
+        content: 'about';
+      }
+    }
+
+    a.portfolio-link {
+      &:after {
+        content: 'works';
       }
     }
 
     a.skills-link {
       &:after {
-        content: 'SKILLS';
+        content: 'tools';
       }
     }
 
     a.contact-link {
       &:after {
-        content: 'CONTACT';
+        content: 'contact';
       }
     }
 

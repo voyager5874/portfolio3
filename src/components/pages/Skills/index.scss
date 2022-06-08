@@ -23,7 +23,7 @@
       font-family: sans-serif;
       font-weight: 300;
       max-width: fit-content;
-      animation: pulse 1s;
+      animation: pulse 2s;
 
       &:before {
         @include beforeDecorator('<p>', -20px, -10px);
@@ -40,9 +40,9 @@
     width: 40%;
     //background-color: rgba(220, 20, 60, 0.45);
     color: $casualTextColor;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Coolvetica', sans-serif;
     font-size: 20px;
-    font-weight: 650;
+    font-weight: 500;
     //margin: 0 auto;
     display: flex;
     justify-content: center;

@@ -1,5 +1,4 @@
 import './index.scss'
-// import LogoS from '../../assets/images/logo-s.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
     faLinkedin,
@@ -9,6 +8,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import {faHome, faUser, faEnvelope, faTools} from '@fortawesome/free-solid-svg-icons'
 import {Link, NavLink} from 'react-router-dom'
+import {faBriefcase} from "@fortawesome/free-solid-svg-icons/faBriefcase";
 
 export const Sidebar = () => {
     return (
@@ -24,6 +24,9 @@ export const Sidebar = () => {
                 </NavLink>
                 <NavLink className={"about-link"} to="/about">
                     <FontAwesomeIcon icon={faUser}/>
+                </NavLink>
+                <NavLink className={"portfolio-link"} to="/portfolio">
+                    <FontAwesomeIcon icon={faBriefcase}/>
                 </NavLink>
                 <NavLink
                     className={"skills-link"}

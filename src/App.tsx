@@ -7,6 +7,7 @@ import {Sidebar} from "./components/Sidebar";
 import {ContactMe} from "./components/pages/ContactMe";
 import {Skills} from "./components/pages/Skills";
 import {NavigationMenu} from "./components/NavigationMenu";
+import {Portfolio} from "./components/pages/Portfolio";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Sidebar/>
             <Routes>
                 <Route path="/home" element={<Home/>}/>
+                <Route path="/portfolio" element={<Portfolio/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/skills" element={<Skills/>}/>
                 <Route path="/contact" element={<ContactMe />} />

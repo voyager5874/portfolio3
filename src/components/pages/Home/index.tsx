@@ -8,7 +8,7 @@ export const Home = () => {
             <div className="text-zone">
                 <PageCaption delay={18} duration={6000} text={"Hi,#I'm Aleksandr Savkin#Frontend Developer"}/>
                 <h2>/ React / Redux / Typescript /</h2>
-                <a href={`${process.env.PUBLIC_URL}/SavkinAleksandr_frontend_dev_(React).pdf`} className="flat-button" download>
+                <a href={`${process.env.PUBLIC_URL}/SavkinAleksandr_frontend_dev_(React).pdf`} rel="noreferrer" className="flat-button" download>
                     Download CV
                 </a>
             </div>

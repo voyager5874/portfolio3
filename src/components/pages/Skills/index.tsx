@@ -85,7 +85,7 @@ export const Skills = () => {
         <>
             <div className="skills-page">
                 <div className={"text-zone"}>
-                    <PageCaption delay={20} duration={3500} text={"Tools I'm using"}/>
+                    <PageCaption delay={12} duration={2600} text={"Tools I'm using"}/>
                     <LoremIpsum p={2} random={false}/>
                 </div>
 

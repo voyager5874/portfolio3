@@ -1,0 +1,24 @@
+@import "../color-variables";
+
+@mixin headingFont {
+  color: $casualTextColor;
+  font-size: 56px;
+  line-height: 53px;
+  font-family: 'Coolvetica', sans-serif;
+  font-weight: 400;
+}
+
+@mixin paragraphFont {
+  font-size: 17px;
+  color: $casualTextColor;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+@mixin htmlTagsFont {
+  font-family: 'La Belle Aurore', cursive;
+  color: $hoveredElementColor;
+  font-size: 18px;
+  opacity: 0.6;
+  line-height: 18px;
+}

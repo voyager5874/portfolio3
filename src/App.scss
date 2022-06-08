@@ -1,6 +1,5 @@
 @import '~animate.css/animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
-//@import '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"'
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -52,12 +51,9 @@ textarea {
   position: relative;
   background: #022c43;
   display: flex;
-  //align-items: center;
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
-  //@media (max-width: 900px){
-  //  flex-direction: column;
-  //}
+  padding: 0 0 0 80px;
+
 }

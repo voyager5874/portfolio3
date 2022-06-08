@@ -35,7 +35,9 @@ export const NavigationMenu = () => {
                         </NavLink>
                         <NavLink
                             className={"portfolio-link"}
-                            to="/portfolio">
+                            to="/portfolio"
+                            onClick={handleMenuOpen}
+                        >
                             <FontAwesomeIcon icon={faBriefcase}/>
                         </NavLink>
                         <NavLink

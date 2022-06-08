@@ -37,6 +37,14 @@ export const Portfolio = () => {
                          description={loremIpsum({avgWordsPerSentence: 3})[0]}
                          image={darkImg}
                          appLink={""} codeLink={""}/>
+                <Project title={"Some project"}
+                         description={loremIpsum({avgWordsPerSentence: 3})[0]}
+                         image={darkImg}
+                         appLink={""} codeLink={""}/>
+                <Project title={"Recursion"}
+                         description={loremIpsum({avgWordsPerSentence: 3})[0]}
+                         image={darkImg}
+                         appLink={""} codeLink={""}/>
             </div>
 
         </div>

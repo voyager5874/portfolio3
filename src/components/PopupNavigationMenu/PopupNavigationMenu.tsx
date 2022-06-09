@@ -1,31 +1,36 @@
-import "./index.scss"
+import styles from "./PopupNavigationMenu.module.scss";
+import  "./flipTransition.scss";
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEnvelope, faHome, faTools, faUser} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faHome, faTools} from "@fortawesome/free-solid-svg-icons";
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
 import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
 import {faGithub, faLinkedin, faTelegram} from "@fortawesome/free-brands-svg-icons";
-import {CSSTransition} from 'react-transition-group';
+import {CSSTransition} from "react-transition-group";
 import {faBriefcase} from "@fortawesome/free-solid-svg-icons/faBriefcase";
 
-export const NavigationMenu = () => {
+export const PopupNavigationMenu = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     const handleMenuOpen = () => {
         setMenuOpen(!menuOpen)
-        // console.log(menuOpen)
     }
+
 
     return (
         <>
             <CSSTransition in={menuOpen}
-                           timeout={1200}
+                           timeout={2000}
                            mountOnEnter
                            unmountOnExit
-                           classNames={"popup-nav-menu"}>
-                <div className={"popup-nav-menu"}>
-                    <button onClick={handleMenuOpen} className="popup-close">
+                           classNames={{
+                               enterActive: "enter-active",
+                               exitActive: "exit-active",
+                               // enterDone: "enter-done",
+                           }}>
+                <div className={styles.popupNavMenu}>
+                    <button onClick={handleMenuOpen} className={styles.popupClose}>
                         <FontAwesomeIcon icon={faXmark}/>
                     </button>
                     <nav>
@@ -34,21 +39,21 @@ export const NavigationMenu = () => {
                             <FontAwesomeIcon icon={faHome}/>
                         </NavLink>
                         <NavLink
-                            className={"portfolio-link"}
+                            className={styles.portfolioLink}
                             to="/portfolio"
                             onClick={handleMenuOpen}
                         >
                             <FontAwesomeIcon icon={faBriefcase}/>
                         </NavLink>
                         <NavLink
-                            className={"skills-link"}
+                            className={styles.skillsLink}
                             to="/skills"
                             onClick={handleMenuOpen}
                         >
                             <FontAwesomeIcon icon={faTools}/>
                         </NavLink>
                         <NavLink
-                            className={"contact-link"}
+                            className={styles.contactLink}
                             to="/contact"
                             onClick={handleMenuOpen}
                         >
@@ -87,7 +92,7 @@ export const NavigationMenu = () => {
                     </ul>
                 </div>
             </CSSTransition>
-            <button onClick={handleMenuOpen} className="flat-button popup-open">
+            <button onClick={handleMenuOpen} className={styles.popupOpen}>
                 <FontAwesomeIcon icon={faBars}/>
             </button>
         </>

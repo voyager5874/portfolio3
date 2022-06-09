@@ -1,4 +1,5 @@
-@import "../../common/sass/color-variables";
+@import "/src/common/sass/color-variables";
+@import "/src/common/sass/breakpoints-variables";
 
 $startSidebarWidth: 60px;
 $iconsColor: $secondaryIconsColor;
@@ -17,9 +18,10 @@ $iconsColor: $secondaryIconsColor;
   left: 0;
   z-index: 3;
   //min-height: 500px;
-  @media (max-width: 980px){
+  @media (max-width: $firstHorizontalBreakpoint) {
     display: none;
   }
+
   a {
     text-decoration: none;
   }
@@ -33,21 +35,6 @@ $iconsColor: $secondaryIconsColor;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
-    //img {
-    //  display: block;
-    //  margin: 8px auto;
-    //  width: 24px;
-    //  height: auto;
-    //}
-
-    .logo-text {
-      padding: 0;
-      color: $casualTextColor;
-      font-weight: 800;
-      font-size: 14px;
-      //text-shadow: -3px 3px 3px $yellowColor
-    }
   }
 
   nav {
@@ -110,25 +97,25 @@ $iconsColor: $secondaryIconsColor;
       }
     }
 
-    a.about-link {
+    a.aboutLink {
       &:after {
         content: 'about';
       }
     }
 
-    a.portfolio-link {
+    a.portfolioLink {
       &:after {
         content: 'works';
       }
     }
 
-    a.skills-link {
+    a.skillsLink {
       &:after {
         content: 'tools';
       }
     }
 
-    a.contact-link {
+    a.contactLink {
       &:after {
         content: 'contact';
       }

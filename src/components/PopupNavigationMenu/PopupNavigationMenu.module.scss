@@ -1,11 +1,14 @@
 @import "src/common/sass/flat-button";
 @import "src/common/sass/color-variables";
 @import "src/common/sass/breakpoints-variables";
+@import "~animate.css/animate.css"; //animation from the library seems not to be reachable here
+@import "./flipTransition";
 
 $iconsColor: $secondaryIconsColor;
 $hoveredElementHighlight: $hoveredElementColor;
 
-.popup-open{
+.popupOpen{
+  @extend .flat-button;
   margin: 0;
   position: absolute;
   top: 20px;
@@ -20,7 +23,7 @@ $hoveredElementHighlight: $hoveredElementColor;
   }
 }
 
-.popup-nav-menu{
+.popupNavMenu{
   position: absolute;
   top: 20px;
   right: 20px;
@@ -38,6 +41,7 @@ $hoveredElementHighlight: $hoveredElementColor;
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
+
 
 
   nav {
@@ -95,24 +99,24 @@ $hoveredElementHighlight: $hoveredElementColor;
       }
     }
 
-    a.about-link {
+    a.aboutLink {
       &:after {
         content: 'ABOUT';
       }
     }
 
-    a.skills-link {
+    a.skillsLink {
       &:after {
         content: 'SKILLS';
       }
     }
 
-    a.contact-link {
+    a.contactLink {
       &:after {
         content: 'CONTACT';
       }
     }
-    a.portfolio-link {
+    a.portfolioLink {
       &:after {
         content: 'works';
       }
@@ -150,7 +154,7 @@ $hoveredElementHighlight: $hoveredElementColor;
   }
 }
 
-.popup-close{
+.popupClose{
   @extend .flat-button;
   margin: 0;
   position: absolute;
@@ -164,10 +168,14 @@ $hoveredElementHighlight: $hoveredElementColor;
   //padding: 5px;
 }
 
-.popup-nav-menu-enter-active{
-  animation: flipInY 1.1s forwards;
-}
+//.enterActive{
+//  animation: flipInY 1.1s forwards;
+//}
+//
+//.exitActive, .appearActive{
+//  animation: flipOutY 1.1s forwards;
+//}
 
-.popup-nav-menu-exit-active, .popup-nav-menu-appear-active{
-  animation: flipOutY 1.1s forwards;
+.enterDone{
+  @extend .enter-done;
 }

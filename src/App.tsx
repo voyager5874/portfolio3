@@ -6,7 +6,7 @@ import {About} from "./components/pages/About";
 import {Sidebar} from "./components/Sidebar";
 import {ContactMe} from "./components/pages/ContactMe";
 import {Skills} from "./components/pages/Skills";
-import {NavigationMenu} from "./components/NavigationMenu";
+import {PopupNavigationMenu} from "./components/PopupNavigationMenu";
 import {Portfolio} from "./components/pages/Portfolio";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                 <Route path="/contact" element={<ContactMe />} />
                 <Route path="/" element={<Navigate to="/home" />} />
             </Routes>
-            <NavigationMenu/>
+            <PopupNavigationMenu/>
         </div>
 
     )

@@ -1,4 +1,4 @@
-import './index.scss'
+import styles from "./Sidebar.module.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
     faLinkedin,
@@ -12,30 +12,28 @@ import {faBriefcase} from "@fortawesome/free-solid-svg-icons/faBriefcase";
 
 export const Sidebar = () => {
     return (
-        <div className="sidebar">
-            <Link className="logo" to="/">
+        <div className={styles.sidebar}>
+            <Link className={styles.logo} to="/">
                 <FontAwesomeIcon icon={faReact} size={"3x"}/>
-                {/*<div className="logo-text">Savaa</div>*/}
-                {/*<div className="sub-logo">Savkin</div>*/}
             </Link>
             <nav>
                 <NavLink to="/home">
                     <FontAwesomeIcon icon={faHome}/>
                 </NavLink>
-                <NavLink className={"about-link"} to="/about">
+                <NavLink className={styles.aboutLink} to="/about">
                     <FontAwesomeIcon icon={faUser}/>
                 </NavLink>
-                <NavLink className={"portfolio-link"} to="/portfolio">
+                <NavLink className={styles.portfolioLink} to="/portfolio">
                     <FontAwesomeIcon icon={faBriefcase}/>
                 </NavLink>
                 <NavLink
-                    className={"skills-link"}
+                    className={styles.skillsLink}
                     to="/skills"
                 >
                     <FontAwesomeIcon icon={faTools}/>
                 </NavLink>
                 <NavLink
-                    className={"contact-link"}
+                    className={styles.contactLink}
                     to="/contact"
                 >
                     <FontAwesomeIcon icon={faEnvelope}/>

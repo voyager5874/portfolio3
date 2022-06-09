@@ -1,15 +1,15 @@
-import "./portfolio.scss"
-import {PageCaption} from "../../pageCaption";
-import socNetwork from "../../../assets/images/social-network-thumb-2.png"
-import taskTracker from "../../../assets/images/task-tracker-thumb.png"
-import darkImg from "../../../assets/images/pug-img-dark.png"
+import styles from "./Portfolio.module.scss";
+import {PageHeading} from "components/PageHeading";
+import socNetwork from "assets/images/social-network-thumb-2.png";
+import taskTracker from "assets/images/task-tracker-thumb.png";
+import darkImg from "assets/images/pug-img-dark.png";
 import {loremIpsum} from "react-lorem-ipsum";
 
 export const Portfolio = () => {
     return (
-        <div className={"portfolio-page"}>
-            <PageCaption delay={5} duration={1500} text={"Portfolio"}/>
-            <div className={"projects-container"}>
+        <div className={styles.portfolioPage}>
+            <PageHeading delay={5} duration={1500} text={"Portfolio"}/>
+            <div className={styles.projectsContainer}>
                 <Project title={"Social network"}
                          description={"social network site with profile creation , registered user search, messaging"}
                          image={socNetwork}
@@ -61,13 +61,13 @@ type ProjectPropsType = {
 
 const Project = ({title, description, image, appLink, codeLink}: ProjectPropsType) => {
     return (
-        <div className={"project-card"}>
-            <div className={"image-wrapper"}>
-                <div className={"links-container"}>
-                    <a className={"project-link"} target={"_blank"} rel="noreferrer" href={appLink}>view app</a>
-                    <a className={"project-link"} target={"_blank"} rel="noreferrer" href={codeLink}>view code</a>
+        <div className={styles.projectCard}>
+            <div className={styles.imageWrapper}>
+                <div className={styles.linksContainer}>
+                    <a className={styles.projectLink} target={"_blank"} rel="noreferrer" href={appLink}>view app</a>
+                    <a className={styles.projectLink} target={"_blank"} rel="noreferrer" href={codeLink}>view code</a>
                 </div>
-                <div className={"image-container"} style={{backgroundImage: `url(${image})`}}>
+                <div className={styles.imageContainer} style={{backgroundImage: `url(${image})`}}>
                 </div>
             </div>
             <h2>{title}</h2>

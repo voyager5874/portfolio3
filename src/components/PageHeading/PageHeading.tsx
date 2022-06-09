@@ -11,7 +11,7 @@ type PropsType = {
     text: string
 }
 
-export const PageCaption = ({
+export const PageHeading = ({
                                 delay,
                                 duration,
                                 text,

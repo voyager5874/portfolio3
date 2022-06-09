@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import Loader from 'react-loaders';
 import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
 import {LatLngTuple} from "leaflet";
-import {PageCaption} from "../../pageCaption";
+import {PageHeading} from "components/PageHeading";
 
 const coordinates = [53.13018331050917, 45.030724178479495] as LatLngTuple
 
@@ -42,7 +42,7 @@ export const ContactMe = () => {
             <>
                 <div className="contact-page">
                     <div className="text-zone">
-                        <PageCaption delay={18} duration={3100} text="Contact me"/>
+                        <PageHeading delay={18} duration={3100} text="Contact me"/>
                         <p>
                             If you have a question, don't
                             hesitate to contact me using the form or any other media shared.

@@ -1,10 +1,10 @@
-import "./index.scss";
+import "components/pages/Skills/index.scss";
 import {useEffect, useRef, useState} from "react";
 // @ts-ignore
 import TagCloud from "TagCloud"
 // const TagCloud = require('TagCloud');
 import Loader from 'react-loaders';
-import {PageCaption} from "../../pageCaption";
+import {PageHeading} from "components/PageHeading";
 import LoremIpsum from "react-lorem-ipsum";
 
 
@@ -47,7 +47,6 @@ export const Skills = () => {
             maxSpeed: 'fast',
             initSpeed: 'fast',
         } as TagCloudOptionsType)
-        // console.log(tagInstance)
         return () => {
             tagInstance.destroy()
         }
@@ -68,10 +67,6 @@ export const Skills = () => {
             } else {
                 handleRadiusUpdate(window.innerHeight / 2)
             }
-            // setCloudRadius((cloudContainer.current.clientHeight) / 2)
-            // console.log('width', cloudContainer.current.clientWidth)
-            // console.log('height', cloudContainer.current.clientHeight)
-            // console.log('window', window.innerHeight)
         }
 
         window.addEventListener('resize', handleResize)
@@ -85,7 +80,7 @@ export const Skills = () => {
         <>
             <div className="skills-page">
                 <div className={"text-zone"}>
-                    <PageCaption delay={12} duration={2600} text={"Tools I'm using"}/>
+                    <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
                     <LoremIpsum p={2} random={false}/>
                 </div>
 

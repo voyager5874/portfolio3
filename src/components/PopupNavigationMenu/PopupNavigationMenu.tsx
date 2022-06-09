@@ -1,5 +1,4 @@
 import styles from "./PopupNavigationMenu.module.scss";
-import  "./flipTransition.scss";
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -25,9 +24,8 @@ export const PopupNavigationMenu = () => {
                            mountOnEnter
                            unmountOnExit
                            classNames={{
-                               enterActive: "enter-active",
-                               exitActive: "exit-active",
-                               // enterDone: "enter-done",
+                               enterActive: styles.enterActive,
+                               exitActive: styles.exitActive,
                            }}>
                 <div className={styles.popupNavMenu}>
                     <button onClick={handleMenuOpen} className={styles.popupClose}>
@@ -35,27 +33,26 @@ export const PopupNavigationMenu = () => {
                     </button>
                     <nav>
                         <NavLink to="/home"
-                                 onClick={handleMenuOpen}>
+                                 className={({isActive}) => isActive ? styles.active : ''}
+                                 onClick={handleMenuOpen}
+                        >
                             <FontAwesomeIcon icon={faHome}/>
                         </NavLink>
-                        <NavLink
-                            className={styles.portfolioLink}
-                            to="/portfolio"
-                            onClick={handleMenuOpen}
+                        <NavLink to="/portfolio"
+                                 className={({isActive}) => isActive ? `${styles.active} ${styles.portfolioLink}` : styles.portfolioLink}
+                                 onClick={handleMenuOpen}
                         >
                             <FontAwesomeIcon icon={faBriefcase}/>
                         </NavLink>
-                        <NavLink
-                            className={styles.skillsLink}
-                            to="/skills"
-                            onClick={handleMenuOpen}
+                        <NavLink to="/skills"
+                                 className={({isActive}) => isActive ? `${styles.active} ${styles.skillsLink}` : styles.skillsLink}
+                                 onClick={handleMenuOpen}
                         >
                             <FontAwesomeIcon icon={faTools}/>
                         </NavLink>
-                        <NavLink
-                            className={styles.contactLink}
-                            to="/contact"
-                            onClick={handleMenuOpen}
+                        <NavLink to="/contact"
+                                 className={({isActive}) => isActive ? `${styles.active} ${styles.contactLink}` : styles.contactLink}
+                                 onClick={handleMenuOpen}
                         >
                             <FontAwesomeIcon icon={faEnvelope}/>
                         </NavLink>

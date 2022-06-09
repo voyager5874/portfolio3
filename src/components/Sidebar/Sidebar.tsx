@@ -17,24 +17,34 @@ export const Sidebar = () => {
                 <FontAwesomeIcon icon={faReact} size={"3x"}/>
             </Link>
             <nav>
-                <NavLink to="/home">
+                <NavLink to="/home"
+                    //css modules make it complicated
+                         className={({isActive}) =>
+                             isActive ? styles.active : ''}
+                >
                     <FontAwesomeIcon icon={faHome}/>
                 </NavLink>
-                <NavLink className={styles.aboutLink} to="/about">
+                <NavLink to="/about"
+                         className={({isActive}) =>
+                             isActive ? `${styles.aboutLink} ${styles.active}` : styles.aboutLink}
+                >
                     <FontAwesomeIcon icon={faUser}/>
                 </NavLink>
-                <NavLink className={styles.portfolioLink} to="/portfolio">
+                <NavLink to="/portfolio"
+                         className={({isActive}) =>
+                             isActive ? `${styles.portfolioLink} ${styles.active}` : styles.portfolioLink}
+                >
                     <FontAwesomeIcon icon={faBriefcase}/>
                 </NavLink>
-                <NavLink
-                    className={styles.skillsLink}
-                    to="/skills"
+                <NavLink to="/skills"
+                         className={({isActive}) =>
+                             isActive ? `${styles.skillsLink} ${styles.active}` : styles.skillsLink}
                 >
                     <FontAwesomeIcon icon={faTools}/>
                 </NavLink>
-                <NavLink
-                    className={styles.contactLink}
-                    to="/contact"
+                <NavLink to="/contact"
+                         className={({isActive}) =>
+                             isActive ? `${styles.contactLink} ${styles.active}` : styles.contactLink}
                 >
                     <FontAwesomeIcon icon={faEnvelope}/>
                 </NavLink>

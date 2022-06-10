@@ -53,6 +53,9 @@
     line-height: 30px;
   }
 
+}
+
+.withDecorators {
   &:before {
     @include beforeDecorator('<h1>', -30px, -15px);
   }
@@ -62,18 +65,19 @@
   }
 }
 
+
 .animatedDecorators{
   &:before {
     opacity: 0;
-    :global {
-      animation: fadeIn 2s 9s forwards;
-    }
+    //:global {
+    //  animation: fadeIn 2s 9s forwards;
+    //}
   }
 
   &:after {
     opacity: 0;
-    :global {
-      animation: fadeIn 2s 9s forwards;
-    }
+    //:global {
+    //  animation: fadeIn 2s 9s forwards;
+    //}
   }
 }

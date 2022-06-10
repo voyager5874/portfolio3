@@ -8,7 +8,8 @@ type PropsType = {
     delay: number
     duration: number
     text: string
-    decorators?: boolean
+    decoratorBefore?: boolean
+    decoratorAfter?: boolean
     animatedDecorators?: boolean
     decoratorsDelay?: number
 }
@@ -17,7 +18,8 @@ export const PageHeading = ({
                                 delay,
                                 duration,
                                 text,
-                                decorators = true,
+                                decoratorBefore = true,
+                                decoratorAfter = true,
                                 animatedDecorators = false,
                                 decoratorsDelay = 0,
                             }: PropsType) => {
@@ -29,7 +31,8 @@ export const PageHeading = ({
         }, duration)
         return () => clearTimeout(timeOutId)
     }, [duration])
-    const componentContainerClass = `${styles.pageCaption} ${decorators ? styles.withDecorators : ''} ${animatedDecorators ? styles.animatedDecorators : ''}`
+    const componentContainerClass = `${styles.pageCaption} ${decoratorBefore ? styles.withBeforeDecorator : ''} 
+    ${decoratorAfter ? styles.withAfterDecorator : ''} ${animatedDecorators ? styles.animatedDecorators : ''}`
     return (
         <h1 className={componentContainerClass} css={{
             "&::before": {

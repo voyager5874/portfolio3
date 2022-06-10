@@ -6,7 +6,7 @@
 @import "src/common/sass/flat-button";
 
 .projectCard {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
   border-radius: 5px;
   overflow: hidden;
   box-sizing: border-box;
@@ -118,9 +118,7 @@
 
 .portfolioPage {
   padding: 40px 40px 40px 100px;
-  :global{
-    animation: fadeIn 2s forwards;
-  }
+
   @media (max-width: 600px) {
     padding-left: 5px;
     padding-right: 5px;
@@ -131,6 +129,10 @@
   @include flexBaseConfig;
   gap: 40px;
   margin-top: 40px;
+  opacity: 0;
+  :global{
+    animation: bounceIn 3s 2s forwards;
+  }
   //background-color: brown;
 }
 

@@ -6,8 +6,10 @@ export const Home = () => {
     return (
         <div className={styles.homePage}>
             <div className={styles.textZone}>
-                <PageHeading delay={18} duration={6000} text={"Hi,#I'm Aleksandr Savkin#Frontend Developer"}
-                             animatedDecorators decoratorsDelay={9}/>
+                <PageHeading delay={18} duration={5000} text={"Hi,#I'm Aleksandr Savkin"}
+                             animatedDecorators decoratorsDelay={9} decoratorAfter={false}/>
+                <PageHeading delay={27} duration={5000} text={"Frontend Developer"}
+                             animatedDecorators decoratorsDelay={9} decoratorBefore={false}/>
                 <h2>/ React / Redux / Typescript /</h2>
                 <a href={`${process.env.PUBLIC_URL}/SavkinAleksandr_frontend_dev_(React).pdf`} rel="noreferrer"
                    download>

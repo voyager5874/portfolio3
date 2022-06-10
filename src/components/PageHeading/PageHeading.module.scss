@@ -55,18 +55,20 @@
 
 }
 
-.withDecorators {
+.withBeforeDecorator {
   &:before {
     @include beforeDecorator('<h1>', -30px, -15px);
   }
+}
 
+.withAfterDecorator {
   &:after {
     @include afterDecorator('</h1>', -20px, fit-content);
   }
 }
 
 
-.animatedDecorators{
+.animatedDecorators {
   &:before {
     opacity: 0;
     //:global {

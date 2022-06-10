@@ -1,8 +1,9 @@
-@import '../../../common/sass/color-variables';
-@import '../../../common/sass/mixins/pageContainerConfig';
-@import '../../../common/sass/mixins/htmlTagsDecorators';
+@import "src/common/sass/color-variables";
+@import "src/common/sass/mixins/pageContainerConfig";
+@import "src/common/sass/mixins/htmlTagsDecorators";
+@import "src/common/sass/flat-button";
 
-.home-page {
+.homePage {
   //background-color: rgba(225, 225, 225, 0.37);
   @include pageContainerConfig;
 
@@ -12,7 +13,7 @@
   //  @include afterDecorator('</body>', 20px, 1200px);
   //}
 
-  .text-zone {
+  .textZone {
     //background-color: blueviolet;
     min-width: fit-content;
     max-width: 700px;
@@ -32,11 +33,14 @@
       position: relative;
       color: $lightGray;
       margin-top: 20px;
+      margin-left: 20px;
       font-weight: 400;
       font-size: 11px;
       font-family: sans-serif;
       letter-spacing: 3px;
-      animation: fadeIn 1s 1.8s backwards;
+      :global{
+        animation: fadeIn 1s 1.8s backwards;
+      }
 
       &:before {
         @include beforeDecorator('<p>', -15px, -30px)
@@ -46,11 +50,15 @@
         @include afterDecorator('</p>', -15px, fit-content)
       }
     }
+    a{
+      @extend .flat-button;
+      margin-left: 20px;
+    }
 
-    @import "../../../common/sass/flat-button";
+    //@import "../../../common/sass/flat-button";
   }
 
-  .dev-main-photo {
+  .devMainPhoto {
     width: 20%;
     max-width: 350px;
     min-width: 200px;

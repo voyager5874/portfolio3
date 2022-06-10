@@ -1,4 +1,4 @@
-import "components/pages/Skills/index.scss";
+import styles from "./Skills.module.scss";
 import {useEffect, useRef, useState} from "react";
 // @ts-ignore
 import TagCloud from "TagCloud"
@@ -21,7 +21,7 @@ type TagCloudOptionsType = Partial<{
 
 }>
 
-const TagCloudContainerClassName = '.tagcloud';
+const TagCloudContainerClassName = ".tagcloud";
 const myTags = [
     'React', 'JavaScript', 'Typescript', 'Redux', 'SCSS', 'Axios', 'Material UI', 'CSS', 'HTML',
     'git', 'Formik', 'TDD', 'Storybook', 'Styled Components', 'Redux-thunk', 'Redux toolkit', 'React-router',
@@ -78,13 +78,13 @@ export const Skills = () => {
 
     return (
         <>
-            <div className="skills-page">
-                <div className={"text-zone"}>
+            <div className={styles.skillsPage}>
+                <div className={styles.textZone}>
                     <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
                     <LoremIpsum p={2} random={false}/>
                 </div>
 
-                <div ref={cloudContainer} className="tagcloud"/>
+                <div ref={cloudContainer} className={"tagcloud"}/>
             </div>
 
             <Loader type={"pacman"} active/>

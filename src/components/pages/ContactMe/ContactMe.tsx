@@ -1,4 +1,4 @@
-import './index.scss';
+import styles from './ContactMe.module.scss';
 import {useRef} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -40,19 +40,19 @@ export const ContactMe = () => {
 
         return (
             <>
-                <div className="contact-page">
-                    <div className="text-zone">
+                <div className={styles.contactPage}>
+                    <div className={styles.textZone}>
                         <PageHeading delay={18} duration={3100} text="Contact me"/>
                         <p>
                             If you have a question, don't
                             hesitate to contact me using the form or any other media shared.
                         </p>
-                        <div className="contact-form">
+                        <div className={styles.contactForm}>
                             <form ref={form} onSubmit={sendEmail}>
-                                <label className="half">
+                                <label className={styles.half}>
                                     <input placeholder="Name" type="text" name="from_name" required/>
                                 </label>
-                                <label className="half">
+                                <label className={styles.half}>
                                     <input
                                         placeholder="Email"
                                         type="email"
@@ -75,13 +75,13 @@ export const ContactMe = () => {
                                             required
                                         />
                                 </label>
-                                <button type="submit" className="flat-button">Send</button>
+                                <button type="submit">Send</button>
 
                             </form>
                         </div>
                     </div>
-                    <div className="map-wrap">
-                        <div className="info-map">
+                    <div className={styles.mapWrap}>
+                        <div className={styles.infoMap}>
                             Aleksandr Savkin
                             <br/>
                             Penza city, Russia

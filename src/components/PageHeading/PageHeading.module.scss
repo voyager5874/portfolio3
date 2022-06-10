@@ -1,17 +1,21 @@
 @import 'src/common/sass/color-variables';
 @import 'src/common/sass/mixins/htmlTagsDecorators';
 
-.text-appearance-animation {
+.textAppearanceAnimation {
   display: inline-block;
   opacity: 0;
-  animation: bounceIn 1s forwards;
+  :global{
+    animation: bounceIn 1s forwards;
+  }
   min-width: 10px;
 }
 
-.text-on-hover-animation {
+.textOnHoverAnimation {
   min-width: 10px;
   display: inline-block;
-  animation: rubberBand 1s both;
+  :global{
+    animation: rubberBand 1s both;
+  }
 
 
   &:hover {
@@ -26,7 +30,7 @@
 //  }
 //}
 
-.page-caption {
+.pageCaption {
   //max-width: 400px;
   position: relative;
   color: $casualTextColor;

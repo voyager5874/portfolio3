@@ -1,0 +1,35 @@
+@import "src/common/sass/mixins/pageContainerConfig";
+@import "src/common/sass/mixins/htmlTagsDecorators";
+@import "src/common/sass/color-variables";
+.aboutPage{
+  @include pageContainerConfig;
+  .pageLeft{
+    width: 40%;
+    p {
+      margin-top: 40px;
+      position: relative;
+      font-size: 17px;
+      color: $casualTextColor;
+      font-family: sans-serif;
+      font-weight: 300;
+      max-width: fit-content;
+      :global{
+        animation: pulse 2s;
+      }
+
+      &:before {
+        @include beforeDecorator('<p>', -20px, -10px);
+      }
+
+      &:after {
+        @include afterDecorator('</p>', -5px, fit-content);
+      }
+    }
+  }
+  .pageRight{
+    background-color: crimson;
+    width: 40%;
+    min-height: 50vh;
+  }
+
+}

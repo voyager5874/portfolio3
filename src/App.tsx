@@ -6,7 +6,7 @@ import {Skills} from "./components/pages/Skills";
 import {ContactMe} from "./components/pages/ContactMe";
 import {Home} from "./components/pages/Home";
 import {Sidebar} from "./components/Sidebar";
-import {About} from "./components/pages/About";
+import {About} from "components/pages/About/About";
 // import {Layout} from "./components/Layout";
 
 

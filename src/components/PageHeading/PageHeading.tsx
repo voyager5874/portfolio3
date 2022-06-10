@@ -1,9 +1,5 @@
-import "./index.scss"
+import styles from "./PageHeading.module.scss"
 import {useEffect, useState} from "react";
-
-export type PageCaptionClassNameType =
-    "text-appearance-animation"
-    | "text-on-hover-animation"
 
 type PropsType = {
     delay: number
@@ -16,21 +12,21 @@ export const PageHeading = ({
                                 duration,
                                 text,
                             }: PropsType) => {
-    const [letterClass, setLetterClass] = useState<PageCaptionClassNameType>('text-appearance-animation')
+    const [letterClass, setLetterClass] = useState<string>(styles.textAppearanceAnimation)
     const lettersArray = text.split("")
     useEffect(() => {
         let timeOutId = setTimeout(() => {
-            setLetterClass('text-on-hover-animation')
+            setLetterClass(styles.textOnHoverAnimation)
         }, duration)
         return () => clearTimeout(timeOutId)
     }, [duration])
     return (
-        <h1 className="page-caption">
+        <h1 className={styles.pageCaption}>
             {lettersArray.map((char, i) => (char === "#" ? <br/> :
                     // <span key={char + i} className={`${letterClass} _${i + delay}`}>
                     <span key={char + i}
                           className={letterClass}
-                          style={{animationDelay: `${letterClass === 'text-appearance-animation' ? ((i + delay) / 10) : 0}s`}}
+                          style={{animationDelay: `${letterClass === styles.textAppearanceAnimation ? ((i + delay) / 10) : 0}s`}}
                     >
                         {char}
                     </span>

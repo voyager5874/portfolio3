@@ -2,6 +2,7 @@ import styles from "./Portfolio.module.scss";
 import {PageHeading} from "components/PageHeading";
 import socNetwork from "assets/images/social-network-thumb-2.png";
 import taskTracker from "assets/images/task-tracker-thumb.png";
+import recursion from "assets/images/portfolio-thumb.png";
 import darkImg from "assets/images/pug-img-dark.png";
 import {loremIpsum} from "react-lorem-ipsum";
 
@@ -43,8 +44,8 @@ export const Portfolio = () => {
                          appLink={""} codeLink={""}/>
                 <Project title={"Recursion"}
                          description={loremIpsum({avgWordsPerSentence: 3})[0]}
-                         image={darkImg}
-                         appLink={""} codeLink={""}/>
+                         image={recursion}
+                         appLink={""} codeLink={"https://github.com/voyager5874/portfolio3"}/>
             </div>
 
         </div>

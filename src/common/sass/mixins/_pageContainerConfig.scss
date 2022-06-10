@@ -9,9 +9,9 @@
   opacity: 0;
   z-index: 1;
   transform-style: preserve-3d;
-  //:global{
-  //  animation: fadeIn 1s 1s forwards;
-  //}
+  :global{
+    animation: fadeIn 1s 1s forwards;
+  }
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
   @include flexBaseConfig;

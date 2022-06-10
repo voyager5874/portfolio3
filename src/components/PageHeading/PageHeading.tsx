@@ -5,12 +5,14 @@ type PropsType = {
     delay: number
     duration: number
     text: string
+    animatedDecorators?: boolean
 }
 
 export const PageHeading = ({
                                 delay,
                                 duration,
                                 text,
+                                animatedDecorators = false,
                             }: PropsType) => {
     const [letterClass, setLetterClass] = useState<string>(styles.textAppearanceAnimation)
     const lettersArray = text.split("")
@@ -21,7 +23,7 @@ export const PageHeading = ({
         return () => clearTimeout(timeOutId)
     }, [duration])
     return (
-        <h1 className={styles.pageCaption}>
+        <h1 className={`${styles.pageCaption} ${animatedDecorators ? styles.animatedDecorators : ''}`}>
             {lettersArray.map((char, i) => (char === "#" ? <br/> :
                     // <span key={char + i} className={`${letterClass} _${i + delay}`}>
                     <span key={char + i}

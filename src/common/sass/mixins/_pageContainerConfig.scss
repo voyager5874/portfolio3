@@ -1,11 +1,11 @@
 @import 'flexConfig';
+@import "src/common/sass/breakpoints-variables";
 
 @mixin pageContainerConfig {
   //will-change: contents;
   width: 100%;
   min-height: 100vh;
   min-width: 300px;
-  //min-height: 500px;
   opacity: 0;
   z-index: 1;
   transform-style: preserve-3d;
@@ -15,12 +15,11 @@
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
   @include flexBaseConfig;
-  //flex-grow: 1;
   position: relative;
   padding-left: 80px;
   padding-right: 20px;
   padding-top: 20px;
-  @media(max-width: 600px) {
+  @media(max-width: $firstHorizontalBreakpoint) {
     padding-left: 20px;
     padding-right: 20px;
   }

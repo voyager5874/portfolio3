@@ -1,19 +1,22 @@
-@import 'src/common/sass/color-variables';
-@import 'src/common/sass/mixins/htmlTagsDecorators';
+@import "src/common/sass/color-variables";
+@import "src/common/sass/mixins/htmlTagsDecorators";
 
 .textAppearanceAnimation {
   display: inline-block;
   opacity: 0;
-  :global{
+
+  :global {
     animation: bounceIn 1s forwards;
   }
+
   min-width: 10px;
 }
 
 .textOnHoverAnimation {
   min-width: 10px;
   display: inline-block;
-  :global{
+
+  :global {
     animation: rubberBand 1s both;
   }
 
@@ -56,5 +59,21 @@
 
   &:after {
     @include afterDecorator('</h1>', -20px, fit-content);
+  }
+}
+
+.animatedDecorators{
+  &:before {
+    opacity: 0;
+    :global {
+      animation: fadeIn 2s 9s forwards;
+    }
+  }
+
+  &:after {
+    opacity: 0;
+    :global {
+      animation: fadeIn 2s 9s forwards;
+    }
   }
 }

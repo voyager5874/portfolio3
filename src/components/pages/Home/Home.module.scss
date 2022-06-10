@@ -19,6 +19,10 @@
     max-width: 700px;
     &:before {
       @include beforeDecorator('<body>', 30px, 80px);
+      opacity: 0;
+      :global {
+        animation: fadeIn 2s 9s forwards;
+      }
       @media (max-height: 350px) {
         display: none;
       }
@@ -30,6 +34,7 @@
     }
 
     h2 {
+      opacity: 0;
       position: relative;
       color: $lightGray;
       margin-top: 20px;
@@ -39,23 +44,33 @@
       font-family: sans-serif;
       letter-spacing: 3px;
       :global{
-        animation: fadeIn 1s 1.8s backwards;
+        animation: fadeIn 2s 6s forwards;
       }
 
       &:before {
-        @include beforeDecorator('<p>', -15px, -30px)
+        @include beforeDecorator('<p>', -15px, -30px);
+        opacity: 0;
+        :global {
+          animation: fadeIn 2s 9s forwards;
+        }
       }
 
       &:after {
-        @include afterDecorator('</p>', -15px, fit-content)
+        @include afterDecorator('</p>', -15px, fit-content);
+        opacity: 0;
+        :global {
+          animation: fadeIn 2s 9s forwards;
+        }
       }
     }
     a{
       @extend .flat-button;
+      opacity: 0;
       margin-left: 20px;
+      :global{
+        animation: fadeIn 2s 7s forwards;
+      }
     }
-
-    //@import "../../../common/sass/flat-button";
   }
 
   .devMainPhoto {
@@ -77,6 +92,10 @@
 
   &:after {
     @include afterDecorator('</body>', 30px, calc(100% - 150px));
+    opacity: 0;
+    :global {
+      animation: fadeIn 2s 9s forwards;
+    }
   }
 
 }

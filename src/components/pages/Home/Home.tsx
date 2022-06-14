@@ -1,9 +1,13 @@
 import styles from "./Home.module.scss";
 import ava from "assets/images/ava-real1.jpg";
 import {PageHeading} from "components/PageHeading";
+import {useState} from "react";
+import Loader from "react-loaders";
 
 export const Home = () => {
+    const [isLoading, setIsLoading] = useState(true)
     return (
+        <>
         <div className={styles.homePage}>
             <div className={styles.textZone}>
                 <PageHeading delay={18} duration={5000} text={"Hi,#I'm Aleksandr Savkin"}
@@ -16,11 +20,9 @@ export const Home = () => {
                     Download CV
                 </a>
             </div>
-            <img src={ava} alt="developer" className={styles.devMainPhoto}/>
-            {/*<Photo/>*/}
-
+            <img src={ava} alt="developer" className={styles.devMainPhoto} onLoad={()=>setIsLoading(false)}/>
         </div>
-
-
+        <Loader active={isLoading} type={"ball-beat"}/>
+        </>
     );
 };

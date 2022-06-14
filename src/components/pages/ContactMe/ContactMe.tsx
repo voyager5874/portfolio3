@@ -1,5 +1,5 @@
 import styles from './ContactMe.module.scss';
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
@@ -11,6 +11,20 @@ import {PageHeading} from "components/PageHeading";
 const coordinates = [53.13018331050917, 45.030724178479495] as LatLngTuple
 
 export const ContactMe = () => {
+
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        const onPageLoad = () => {
+            setIsLoading(false);
+        };
+
+        if (document.readyState === "complete") {
+            onPageLoad();
+        } else {
+            window.addEventListener("load", onPageLoad);
+            return () => window.removeEventListener("load", onPageLoad);
+        }
+    }, []);
         const form = useRef<HTMLFormElement>(null)
 
         const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
@@ -96,7 +110,7 @@ export const ContactMe = () => {
                         </MapContainer>
                     </div>
                 </div>
-                <Loader type="pacman" active/>
+                <Loader type="ball-grid-pulse" active={isLoading}/>
                 <ToastContainer
                     position="bottom-left"
                     autoClose={3000}

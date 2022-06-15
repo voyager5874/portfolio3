@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import styles from "./PageHeading.module.scss"
+import styles from "./PageHeading.module.scss";
 import {useEffect, useState} from "react";
-import {jsx, css} from '@emotion/react'
+import {jsx, css} from "@emotion/react";
 
 type PropsType = {
     delay: number
@@ -26,10 +26,11 @@ export const PageHeading = ({
     const [letterClass, setLetterClass] = useState<string>(styles.textAppearanceAnimation)
     const lettersArray = text.split("")
     useEffect(() => {
-        let timeOutId = setTimeout(() => {
+        let timeoutId = setTimeout(() => {
             setLetterClass(styles.textOnHoverAnimation)
         }, duration)
-        return () => clearTimeout(timeOutId)
+        return () => clearTimeout(timeoutId)
+        //'animationend' event could be used instead of manually setting the time
     }, [duration])
     const componentContainerClass = `${styles.pageCaption} ${decoratorBefore ? styles.withBeforeDecorator : ''} 
     ${decoratorAfter ? styles.withAfterDecorator : ''} ${animatedDecorators ? styles.animatedDecorators : ''}`

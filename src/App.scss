@@ -1,5 +1,5 @@
 @import '~animate.css/animate.css';
-@import '~loaders.css/src/animations/pacman.scss';
+@import '~loaders.css/src/animations/ball-scale.scss';
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -39,12 +39,11 @@ textarea {
   left: 0;
   right: 0;
   margin: auto;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  height: 50px;
-  animation: fadeOut 1s 1s;
-  animation-fill-mode: forwards;
+  top: 50vh;
+  //bottom: 0;
+  width: 70px;
+  height: 70px;
+  //animation: fadeOut 1s 1s forwards;
 }
 
 .app {

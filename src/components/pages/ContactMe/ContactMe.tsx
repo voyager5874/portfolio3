@@ -1,5 +1,5 @@
 import styles from './ContactMe.module.scss';
-import {useEffect, useRef, useState} from "react";
+import {useRef} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
@@ -7,24 +7,13 @@ import Loader from 'react-loaders';
 import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
 import {LatLngTuple} from "leaflet";
 import {PageHeading} from "components/PageHeading";
+import {useLoading} from "hooks/useLoading";
 
 const coordinates = [53.13018331050917, 45.030724178479495] as LatLngTuple
 
 export const ContactMe = () => {
+        const [isLoading] = useLoading()
 
-    const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
-        const onPageLoad = () => {
-            setIsLoading(false);
-        };
-
-        if (document.readyState === "complete") {
-            onPageLoad();
-        } else {
-            window.addEventListener("load", onPageLoad);
-            return () => window.removeEventListener("load", onPageLoad);
-        }
-    }, []);
         const form = useRef<HTMLFormElement>(null)
 
         const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
@@ -94,8 +83,8 @@ export const ContactMe = () => {
                             </form>
                         </div>
                     </div>
-                    <div className={styles.mapWrap}>
-                        <div className={styles.infoMap}>
+                    <div className={styles.mapWrapper}>
+                        <div className={styles.mapInfo}>
                             Aleksandr Savkin
                             <br/>
                             Penza city, Russia
@@ -110,7 +99,7 @@ export const ContactMe = () => {
                         </MapContainer>
                     </div>
                 </div>
-                <Loader type="ball-grid-pulse" active={isLoading}/>
+                <Loader type="ball-scale" active={isLoading}/>
                 <ToastContainer
                     position="bottom-left"
                     autoClose={3000}

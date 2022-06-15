@@ -5,9 +5,15 @@ import taskTracker from "assets/images/task-tracker-thumb.png";
 import recursion from "assets/images/portfolio-thumb.png";
 import darkImg from "assets/images/pug-img-dark.png";
 import {loremIpsum} from "react-lorem-ipsum";
+import {useLoading} from "hooks/useLoading";
+import Loader from "react-loaders";
+import {Project} from "./Project";
 
 export const Portfolio = () => {
+    const [isLoading] = useLoading()
+
     return (
+        <>
         <div className={styles.portfolioPage}>
             <PageHeading delay={5} duration={1500} text={"Portfolio"}/>
             <div className={styles.projectsContainer}>
@@ -47,32 +53,10 @@ export const Portfolio = () => {
                          image={recursion}
                          appLink={""} codeLink={"https://github.com/voyager5874/portfolio3"}/>
             </div>
-
         </div>
+            <Loader type={"ball-scale"} active={isLoading}/>
+        </>
     )
 };
 
-type ProjectPropsType = {
-    title: string
-    description: string
-    image: string
-    appLink: string
-    codeLink: string
-}
 
-const Project = ({title, description, image, appLink, codeLink}: ProjectPropsType) => {
-    return (
-        <div className={styles.projectCard}>
-            <div className={styles.imageWrapper}>
-                <div className={styles.linksContainer}>
-                    <a className={styles.projectLink} target={"_blank"} rel="noreferrer" href={appLink}>view app</a>
-                    <a className={styles.projectLink} target={"_blank"} rel="noreferrer" href={codeLink}>view code</a>
-                </div>
-                <div className={styles.imageContainer} style={{backgroundImage: `url(${image})`}}>
-                </div>
-            </div>
-            <h2>{title}</h2>
-            <p>{description}</p>
-        </div>
-    )
-}

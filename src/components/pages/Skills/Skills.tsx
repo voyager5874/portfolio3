@@ -6,6 +6,7 @@ import TagCloud from "TagCloud"
 import Loader from 'react-loaders';
 import {PageHeading} from "components/PageHeading";
 import LoremIpsum from "react-lorem-ipsum";
+import {useLoading} from "hooks/useLoading";
 
 
 type TagCloudOptionsType = Partial<{
@@ -33,9 +34,11 @@ const CLOUD_MAX_RADIUS = 400
 export const Skills = () => {
     const cloudContainer = useRef<HTMLDivElement>(null)
     const [cloudRadius, setCloudRadius] = useState(CLOUD_MIN_RADIUS)
+    const [isLoading] = useLoading()
+
 
     const handleRadiusUpdate = (radius: number) => {
-        if (radius > CLOUD_MIN_RADIUS && radius < CLOUD_MAX_RADIUS ) {
+        if (radius > CLOUD_MIN_RADIUS && radius < CLOUD_MAX_RADIUS) {
             setCloudRadius(Math.floor(radius))
         }
         return
@@ -53,7 +56,7 @@ export const Skills = () => {
     }, [cloudRadius])
 
     useEffect(() => {
-        if(!cloudContainer.current) return
+        if (!cloudContainer.current) return
         if (cloudContainer.current.clientWidth < window.innerHeight) {
             handleRadiusUpdate(cloudContainer.current.clientWidth / 2)
         } else {
@@ -81,13 +84,26 @@ export const Skills = () => {
             <div className={styles.skillsPage}>
                 <div className={styles.textZone}>
                     <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
-                    <LoremIpsum p={2} random={false}/>
-                </div>
+                    <p>
+                        The main area of my expertise is
+                        front-end development (React, Redux, JS/TS, HTML, CSS) building small and medium web apps
+                        and coding interactive layouts.
+                    </p>
+                    <p>
+                        I don’t like to define myself by the work I’ve done. I define myself by the work I want to do.
+                        Skills can be taught, personality is inherent. I prefer to keep learning, continue challenging
+                        myself, and do interesting things that matter
+                    </p>
+                    <p>
+                        Fueled by high energy levels and boundless enthusiasm, I’m easily inspired and more then willing
+                        to follow my fascinations wherever they take me. I’m never satisfied to just come up with
+                        ideas. Instead I have an almost impulsive need to act on them.
 
+                    </p>
+                </div>
                 <div ref={cloudContainer} className={"tagcloud"}/>
             </div>
-
-            <Loader type={"pacman"} active/>
+            <Loader type={"ball-scale"} active={isLoading}/>
         </>
     )
 };

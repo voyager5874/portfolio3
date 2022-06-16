@@ -85,7 +85,7 @@ export const Skills = () => {
                 <div className={styles.textZone}>
                     <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
                     <p>
-                        The main area of my expertise is
+                        The main area of my expertise
                         front-end development (React, Redux, JS/TS, HTML, CSS) building small and medium web apps
                         and coding interactive layouts.
                     </p>

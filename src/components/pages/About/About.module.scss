@@ -1,10 +1,17 @@
 @import "src/common/sass/mixins/pageContainerConfig";
 @import "src/common/sass/mixins/htmlTagsDecorators";
+@import "src/common/sass/breakpoints-variables";
 @import "src/common/sass/color-variables";
 .aboutPage{
   @include pageContainerConfig;
   .pageLeft{
     width: 40%;
+    min-width: 300px;
+    max-width: 700px;
+    @media (max-width: $firstBreakpoint) {
+      margin-top: 50px;
+      width: 95vw;
+    }
     p {
       margin-top: 40px;
       position: relative;
@@ -27,9 +34,15 @@
     }
   }
   .pageRight{
+    position: relative;
     //background-color: crimson;
     width: 40%;
+    min-width: 300px;
     min-height: 50vh;
+    @media (max-width: $firstBreakpoint) {
+      margin-top: 50px;
+      width: 95vw;
+    }
   }
 
 }

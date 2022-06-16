@@ -114,3 +114,9 @@
     padding: 20px;
   }
 }
+
+@keyframes :global(disable-pointer-events) {
+  0%, 99% {
+    pointer-events: none;
+  }
+}

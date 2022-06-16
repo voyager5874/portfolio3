@@ -1,20 +1,11 @@
 import styles from "./About.module.scss";
-import "./cube.scss";
 import {PageHeading} from "components/PageHeading";
 import {useLoading} from "hooks/useLoading";
 import Loader from "react-loaders";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import engineerPic from "assets/images/mechanical-design-500x500.jpg";
-import gymPic from "assets/images/gym.jpg";
+// import engineerPic from "assets/images/mechanical-design-500x500.jpg";
+// import gymPic from "assets/images/gym.jpg";
 
-import {
-    faAngular,
-    faCss3,
-    faGitAlt,
-    faHtml5,
-    faJsSquare,
-    faReact,
-} from "@fortawesome/free-brands-svg-icons";
 import {
     faBiking,
     faDraftingCompass,
@@ -59,25 +50,25 @@ export const About = () => {
                     </p>
                 </div>
                 <div className={styles.pageRight}>
-                    <div className="cubeContainer">
-                        <div className="cube">
+                    <div className={styles.cubeContainer}>
+                        <div className={styles.cube}>
                             {/*<div className="face1" style={{backgroundImage: `url(${engineerPic})`}}>*/}
-                            <div className="face1">
+                            <div className={styles.face1}>
                                 <FontAwesomeIcon icon={faBiking} color="#DD0031"/>
                             </div>
-                            <div className="face2">
+                            <div className={styles.face2}>
                                 <FontAwesomeIcon icon={faDraftingCompass} color="#F06529"/>
                             </div>
-                            <div className="face3">
+                            <div className={styles.face3}>
                                 <FontAwesomeIcon icon={faLaptopCode} color="#28A4D9"/>
                             </div>
-                            <div className="face4">
+                            <div className={styles.face4}>
                                 <FontAwesomeIcon icon={faUserGraduate} color="#5ED4F4"/>
                             </div>
-                            <div className="face5">
+                            <div className={styles.face5}>
                                 <FontAwesomeIcon icon={faDumbbell} color="#EFD81D"/>
                             </div>
-                            <div className="face6">
+                            <div className={styles.face6}>
                                 <FontAwesomeIcon icon={faHiking} color="#EC4D28"/>
                             </div>
                         </div>

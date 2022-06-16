@@ -5,7 +5,6 @@ import TagCloud from "TagCloud"
 // const TagCloud = require('TagCloud');
 import Loader from 'react-loaders';
 import {PageHeading} from "components/PageHeading";
-import LoremIpsum from "react-lorem-ipsum";
 import {useLoading} from "hooks/useLoading";
 
 
@@ -85,9 +84,8 @@ export const Skills = () => {
                 <div className={styles.textZone}>
                     <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
                     <p>
-                        The main area of my expertise
-                        front-end development (React, Redux, JS/TS, HTML, CSS) building small and medium web apps
-                        and coding interactive layouts.
+                        The main area of my experience as a frontend developer so far is SPA websites
+                        (React, Redux, JS/TS, HTML, CSS).
                     </p>
                     <p>
                         I don’t like to define myself by the work I’ve done. I define myself by the work I want to do.

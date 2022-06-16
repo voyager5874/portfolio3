@@ -2,7 +2,7 @@ import styles from "./PopupNavigationMenu.module.scss";
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEnvelope, faHome, faTools} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faHome, faTools, faUser} from "@fortawesome/free-solid-svg-icons";
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
 import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
 import {faGithub, faLinkedin, faTelegram} from "@fortawesome/free-brands-svg-icons";
@@ -49,6 +49,12 @@ export const PopupNavigationMenu = () => {
                                  onClick={handleMenuOpen}
                         >
                             <FontAwesomeIcon icon={faTools}/>
+                        </NavLink>
+                        <NavLink to="/about"
+                                 className={({isActive}) => isActive ? `${styles.active} ${styles.aboutLink}` : styles.aboutLink}
+                                 onClick={handleMenuOpen}
+                        >
+                            <FontAwesomeIcon icon={faUser}/>
                         </NavLink>
                         <NavLink to="/contact"
                                  className={({isActive}) => isActive ? `${styles.active} ${styles.contactLink}` : styles.contactLink}

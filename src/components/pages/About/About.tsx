@@ -21,7 +21,7 @@ import {
     faDumbbell,
     faHiking,
     faLaptopCode,
-    faSkiing
+    faSkiing, faUserGraduate
 } from "@fortawesome/free-solid-svg-icons";
 
 export const About = () => {
@@ -40,13 +40,18 @@ export const About = () => {
                         of dissatisfaction.
                     </p>
                     <p>
-                        I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps
+                        A bit of a digital product junky and tech fanatic.
+                        Over the years, I've used hundreds of web and mobile apps
                         Eventually, I decided that it would be a fun challenge to
                         try designing and building my own. Make something happen by typing some lines is a blast and all
                         that work from home, work from any country stuff (potentially) are appealing.
                     </p>
                     <p>
-                        Fitness and overall healthy lifestyle enthusiast
+                        Fitness and overall healthy lifestyle enthusiast.
+                        I've been doing gym for over ten years now.
+                        I Love to ride a bike for some long distance to see what you barely pay attention to when you're
+                        driving.
+
                     </p>
 
                     <p>
@@ -67,7 +72,7 @@ export const About = () => {
                                 <FontAwesomeIcon icon={faLaptopCode} color="#28A4D9"/>
                             </div>
                             <div className="face4">
-                                <FontAwesomeIcon icon={faSkiing} color="#5ED4F4"/>
+                                <FontAwesomeIcon icon={faUserGraduate} color="#5ED4F4"/>
                             </div>
                             <div className="face5">
                                 <FontAwesomeIcon icon={faDumbbell} color="#EFD81D"/>

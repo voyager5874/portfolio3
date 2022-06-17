@@ -82,7 +82,7 @@ export const Skills = () => {
         <>
             <div className={styles.skillsPage}>
                 <div className={styles.textZone}>
-                    <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
+                    <PageHeading delay={12} duration={2600} text={"My skill set"}/>
                     <p>
                         The main area of my experience as a frontend developer is SPA
                         websites (React, Redux, JS/TS).
@@ -97,8 +97,7 @@ export const Skills = () => {
                     </p>
                     <p>On my previous job I had to coordinate technical objectives with
                         customers at the start of a design project.👨‍💼 My responsibility
-                        was
-                        to get an approvement of prototypes tests results.
+                        was to get an approvement of prototypes tests results.
                         I wrote test programs and other technical documentation
                         related to prototypes and final products. I also was responsible
                         for review manufacturers requests. I guess those were analytical

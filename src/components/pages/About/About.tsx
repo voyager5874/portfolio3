@@ -24,21 +24,21 @@ export const About = () => {
                 <div className={styles.pageLeft}>
                     <PageHeading delay={10} duration={2000} text={"Who I am"}/>
                     <p>
-                        Another switcher/wannabe.
+                        Another switcher/wannabe.<span>&#x1F609; </span>
                         Worked as a mechanics design engineer for quite a time right after graduation. The delay
                         between input and output was always irritating for me: there was no easy way to fidget with
                         some idea on the go. The rigidness of a state company and the industry itself were another part
-                        of dissatisfaction.
+                        of dissatisfaction.&#x1F60E;
                     </p>
                     <p>
-                        A bit of a digital product junky and tech fanatic.
+                        A bit of a digital product junky and tech fanatic.&#x1F913;
                         Over the years, I've used hundreds of web and mobile apps
                         Eventually, I decided that it would be a fun challenge to
                         try designing and building my own. Make something happen by typing some lines is a blast and all
                         that work from home, work from any country stuff (potentially) are appealing.
                     </p>
                     <p>
-                        Fitness and overall healthy lifestyle enthusiast.
+                        Fitness and overall healthy lifestyle enthusiast.&#x1F4AA;
                         I've been doing gym for over ten years now.
                         I Love to ride a bike for some long distance to see what you barely pay attention to when you're
                         driving.
@@ -46,7 +46,7 @@ export const About = () => {
                     </p>
 
                     <p>
-                        Hope to find a team where I could grow and would be useful.
+                        Hope to find a team where I could grow and would be useful.&#x1F605;
                     </p>
                 </div>
                 <div className={styles.pageRight}>

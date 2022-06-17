@@ -84,20 +84,30 @@ export const Skills = () => {
                 <div className={styles.textZone}>
                     <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
                     <p>
-                        The main area of my experience as a frontend developer so far is SPA websites
-                        (React, Redux, JS/TS, HTML, CSS).
+                        The main area of my experience as a frontend developer is SPA websites
+                        (React, Redux, JS/TS).
+                        I build web apps with key principles of software development in mind:
+                        KISS, DRY, SOLID.
+                        <p>
+                            I've worked with different APIs rendering data into view, employed routing via react-router,
+                            built responsive layouts with
+                            animations ✨, created universal UI components, implemented login pages using formik.
+                        </p>
+
                     </p>
+                    <p>On my previous job I had to work with customers to coordinate technical objectives and prototypes
+                        tests results. I was responsible for writing test programs and other technical documentation
+                        relating to prototypes and final products. 👨‍💼</p>
+                    {/*🧑‍💼*/}
+                    {/*👨‍💼*/}
+                    {/*🤔*/}
+                    {/*🤓*/}
                     <p>
                         I don’t like to define myself by the work I’ve done. I define myself by the work I want to do.
                         Skills can be taught, personality is inherent. I prefer to keep learning, continue challenging
-                        myself, and do interesting things that matter
+                        myself, and do interesting things that matter🙃
                     </p>
-                    <p>
-                        Fueled by high energy levels and boundless enthusiasm, I’m easily inspired and more then willing
-                        to follow my fascinations wherever they take me. I’m never satisfied to just come up with
-                        ideas. Instead I have an almost impulsive need to act on them.
 
-                    </p>
                 </div>
                 <div ref={cloudContainer} className={"tagcloud"}/>
             </div>

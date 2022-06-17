@@ -84,27 +84,34 @@ export const Skills = () => {
                 <div className={styles.textZone}>
                     <PageHeading delay={12} duration={2600} text={"Tools I'm using"}/>
                     <p>
-                        The main area of my experience as a frontend developer is SPA websites
-                        (React, Redux, JS/TS).
-                        I build web apps with key principles of software development in mind:
-                        KISS, DRY, SOLID.
-                        <p>
-                            I've worked with different APIs rendering data into view, employed routing via react-router,
-                            built responsive layouts with
-                            animations ✨, created universal UI components, implemented login pages using formik.
-                        </p>
-
+                        The main area of my experience as a frontend developer is SPA
+                        websites (React, Redux, JS/TS).
+                        I build web apps with key principles of software development in
+                        mind: KISS, DRY, SOLID.</p>
+                    <p>
+                        I've worked with different APIs rendering data into view, employed
+                        routing via react-router,
+                        built responsive layouts with
+                        animations ✨, created universal UI components, implemented login
+                        pages using formik.
                     </p>
-                    <p>On my previous job I had to work with customers to coordinate technical objectives and prototypes
-                        tests results. I was responsible for writing test programs and other technical documentation
-                        relating to prototypes and final products. 👨‍💼</p>
+                    <p>On my previous job I had to coordinate technical objectives with
+                        customers at the start of a design project.👨‍💼 My responsibility
+                        was
+                        to get an approvement of prototypes tests results.
+                        I wrote test programs and other technical documentation
+                        related to prototypes and final products. I also was responsible
+                        for review manufacturers requests. I guess those were analytical
+                        activities.🤔</p>
                     {/*🧑‍💼*/}
                     {/*👨‍💼*/}
                     {/*🤔*/}
                     {/*🤓*/}
                     <p>
-                        I don’t like to define myself by the work I’ve done. I define myself by the work I want to do.
-                        Skills can be taught, personality is inherent. I prefer to keep learning, continue challenging
+                        I don’t like to define myself by the work I’ve done. I define
+                        myself by the work I want to do.
+                        Skills can be taught, personality is inherent. I prefer to keep
+                        learning, continue challenging
                         myself, and do interesting things that matter🙃
                     </p>
 

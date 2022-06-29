@@ -1,13 +1,13 @@
 import './App.scss';
 import {Navigate, Route, Routes} from "react-router-dom";
-import {Portfolio} from "./components/pages/Portfolio";
-import {PopupNavigationMenu} from "./components/PopupNavigationMenu";
-import {Skills} from "./components/pages/Skills";
-import {ContactMe} from "./components/pages/ContactMe";
-import {Home} from "./components/pages/Home";
-import {Sidebar} from "./components/Sidebar";
+import {Portfolio} from "components/pages/Portfolio";
+import {PopupNavigationMenu} from "components/PopupNavigationMenu";
+import {Skills} from "components/pages/Skills";
+import {ContactMe} from "components/pages/ContactMe";
+import {Home} from "components/pages/Home";
+import {Sidebar} from "components/Sidebar";
 import {About} from "components/pages/About/About";
-// import {Layout} from "./components/Layout";
+
 
 
 function App() {

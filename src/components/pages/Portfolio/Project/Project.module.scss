@@ -39,7 +39,7 @@
 
     .linksContainer {
       .projectLink {
-        :global{
+        :global {
           animation: fadeIn 1.5s forwards, disable-pointer-events 600ms;
         }
       }
@@ -115,7 +115,7 @@
   }
 }
 
-@keyframes :global(disable-pointer-events) {
+@keyframes:global(disable-pointer-events) {
   0%, 99% {
     pointer-events: none;
   }

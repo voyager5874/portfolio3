@@ -1,5 +1,6 @@
 @import '~animate.css/animate.css';
 @import '~loaders.css/src/animations/ball-scale.scss';
+@import 'src/common/sass/color-variables';
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -48,7 +49,7 @@ textarea {
 
 .app {
   position: relative;
-  background: #022c43;
+  background: $mainBackgroundColor;
   display: flex;
   width: 100%;
   min-height: 100vh;

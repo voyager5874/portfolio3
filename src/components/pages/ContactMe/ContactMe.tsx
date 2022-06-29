@@ -89,7 +89,7 @@ export const ContactMe = () => {
                             <br/>
                             Penza city, Russia
                         </div>
-                        <MapContainer center={coordinates} zoom={15}>
+                        <MapContainer center={coordinates} zoom={11}>
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>

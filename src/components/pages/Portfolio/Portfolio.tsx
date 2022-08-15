@@ -2,7 +2,7 @@ import styles from "./Portfolio.module.scss";
 import {PageHeading} from "components/PageHeading";
 import socNetwork from "assets/images/social-network-thumb-2.png";
 import taskTracker from "assets/images/task-tracker-thumb.png";
-import flashcards from "assets/images/flashcards-app.png";
+import flashcards from "assets/images/flashcards-thumb.png";
 import recursion from "assets/images/portfolio-thumb.png";
 // import darkImg from "assets/images/pug-img-dark.png";
 import {loremIpsum} from "react-lorem-ipsum";

@@ -34,4 +34,11 @@ export const projectsData = [
         appLink: "https://jsm-flexibble.vercel.app",
         codeLink: "https://github.com/voyager5874/JSM-flexibble",
     },
+    {
+        title: "MCG Realty",
+        description: "realty catalogue mvp (only frontend), vue composition api, not public",
+        image: "projects-imgs/mcg-realty.png",
+        appLink: "https://realty.hugdev.ru",
+        codeLink: "",
+    },
 ]
